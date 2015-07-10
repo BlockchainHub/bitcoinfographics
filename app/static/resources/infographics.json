@@ -1,0 +1,81 @@
+{
+	"transaction-life-cycle":
+		{
+			"title": "the bitcoin transaction life cycle",
+			"image_path": "/static/img/infographics/medium/transaction-life-cycle.png",
+			"thumbnail_path": "/static/img/infographics/thumbnails/transaction-life-cycle.png",
+			"slug": "transaction-life-cycle",
+			"download_link": "",
+			"index": 0
+		},
+
+	"show-me-bitcoin":
+		{
+			"title": "show me bitcoin",
+			"image_path": "/static/img/infographics/medium/show-me-bitcoin.png",
+			"thumbnail_path": "/static/img/infographics/thumbnails/show-me-bitcoin.png",
+			"slug": "show-me-bitcoin",
+			"download_link": "",
+			"index": 1
+		},
+
+	"bizantine-generals-problem":
+		{
+			"title": "bitcoin and the bizantine generals' problem",
+			"image_path": "/static/img/infographics/medium/bizantine-generals-problem.png",
+			"thumbnail_path": "/static/img/infographics/thumbnails/bizantine-generals-problem.png",
+			"slug": "bizantine-generals-problem",
+			"download_link": "",
+			"index": 2
+		},
+
+	"bitcoin-rollercoaster":
+		{
+			"title": "the bitcoin roller coaster",
+			"image_path": "/static/img/infographics/medium/bitcoin-rollercoaster.png",
+			"thumbnail_path": "/static/img/infographics/thumbnails/bitcoin-rollercoaster.png",
+			"slug": "bitcoin-rollercoaster",
+			"download_link": "",
+			"index": 3
+		},
+
+	"paper-wallet-cold-storage":
+		{
+			"title": "paper wallet cold storage",
+			"image_path": "/static/img/infographics/medium/paper-wallet-cold-storage.png",
+			"thumbnail_path": "/static/img/infographics/thumbnails/paper-wallet-cold-storage.png",
+			"slug": "paper-wallet-cold-storage",
+			"download_link": "",
+			"index": 4
+		},
+
+	"what-is-bitcoin-mining":
+		{
+			"title": "what is bitcoin mining",
+			"image_path": "/static/img/infographics/medium/what-is-bitcoin-mining.png",
+			"thumbnail_path": "/static/img/infographics/thumbnails/what-is-bitcoin-mining.png",
+			"slug": "what-is-bitcoin-mining",
+			"download_link": "",
+			"index": 5
+		},
+
+	"what-is-pow":
+		{
+			"title": "what is proof of work",
+			"image_path": "/static/img/infographics/medium/what-is-pow.png",
+			"thumbnail_path": "/static/img/infographics/thumbnails/what-is-pow.png",
+			"slug": "what-is-pow",
+			"download_link": "",
+			"index": 6
+		},
+
+	"what-is-mining-difficulty":
+		{
+			"title": "what is mining difficulty",
+			"image_path": "/static/img/infographics/medium/what-is-mining-difficulty.png",
+			"thumbnail_path": "/static/img/infographics/thumbnails/what-is-mining-difficulty.png",
+			"slug": "what-is-mining-difficulty",
+			"download_link": "",
+			"index": 7
+		}
+}

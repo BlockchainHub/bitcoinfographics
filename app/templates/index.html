@@ -1,1 +1,16 @@
-hello index
+{% extends 'base.html' %}
+
+{% block content %}
+{% with json=infographics_json %}
+{% for infographic in json | sort %}
+<ul id="infographics-list">
+	<li class="infographic-item">
+		<a href="/infographic/{{ json[infographic].slug }}">
+			<h3>{{ json[infographic].title }}</h3>
+			<div style="background: url('{{ json[infographic].thumbnail_path }}'); background-repeat: no-repeat;" class="index-infographic"></div>
+		</a>
+	</li>
+</ul>
+{% endfor %}
+{% endwith %}
+{% endblock content %}

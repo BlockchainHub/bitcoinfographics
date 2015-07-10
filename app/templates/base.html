@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>bitcoinfographics</title>
+	<!-- style -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='components/normalize/normalize.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+	<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,400italic,700italic' rel='stylesheet' type='text/css'>
+	<link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png')}}">
+</head>
+<body>
+
+	<div id="top-div">
+		<a href="{{ url_for('.index') }}" id="top-home-link">
+			<img src="{{ url_for('static', filename='img/btc_logo.png') }}" id="btc-logo" alt="">
+			<h1 id="title"><span class="bitco">bitco</span><span class="infographics">infographics</span></h1>
+		</a>
+	</div>
+
+	<div class="content">
+	{% block content %}
+	{% endblock content %}
+	</div>
+
+</body>
+</html>
