@@ -1,5 +1,16 @@
 body {
 	font-family: 'Ubuntu', sans-serif;
+	color: #4d4d4d;
+	background-color: #fcfcfc;
+}
+
+a {
+	text-decoration: none;
+	color: #F7931A;
+}
+
+a:hover, a:focus {
+	text-decoration: underline;
 }
 
 #top-div {
@@ -50,10 +61,11 @@ body {
 
 .content {
 	text-align: center;
+	margin-top: 2em;
 }
 
 .infographic-item {
-	margin-top: 4em;
+	margin-top: 1em;
 }
 
 .infographic-item a {
@@ -103,8 +115,89 @@ body {
 
 .infographic-medium {
 	margin-top: 3em;
+	max-width: 100%;
+	max-height: 60em;
 }
 
 .medium-infographic-title {
 	color: #4d4d4d;
+}
+
+.infographic-bottom {
+	margin-top: 5px;
+	margin-bottom: 3em;
+}
+
+.cc-license {
+	margin-top: 30px;
+	font-size: 0.8em;
+	margin-bottom: 10px;
+	color: #4D4D4D;
+}
+
+.download {
+	font-size: 0.95em;
+}
+
+.like-it {
+	margin-top: 40px;
+	font-size: 1.2em;
+}
+
+.button {
+	margin-top: 1em;
+	background-color: #fcfcfc;
+	border: 1px solid #4d4d4d;
+	padding: 10px;
+	width: 6em;
+	transition-property: background-color, border;
+	transition-duration: 0.3s;
+}
+
+.donate-btn {
+	margin-left: 2em;
+}
+
+.button-link {
+	color: #4d4d4d;
+	transition-property: color;
+	transition-duration:0.3s;
+}
+
+.button-link:hover{
+	color: #fcfcfc;
+}
+
+.button-link:hover .button{
+	background-color: #F7931A;
+	border: 1px solid #F7931A;
+}
+
+.donate-area {
+	margin-top: 2em;
+}
+
+.qr-image {
+	border: 5px solid rgba(255, 255, 255, 0);
+	transition-property: border;
+	transition-durtion: 2s;
+}
+
+.donate-link:hover .qr-image {
+	border: 5px solid rgba(247, 147, 26, 1);
+}
+
+.qr-caption {
+	margin-top: 1em;
+	margin-bottom: 2.5em;
+}
+
+.changetip_tipme_button {
+	margin-top: 1em;
+	margin-left: -5.2em;
+	margin-bottom: 3em;
+}
+
+.tip-title {
+	font-size: 1.2em;
 }
