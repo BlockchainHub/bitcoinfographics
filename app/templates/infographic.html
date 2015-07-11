@@ -5,7 +5,7 @@
 <img src="{{ infographics_json[infographic].image_path }}" alt="" class="infographic-medium">
 <div class="infographic-bottom">
 	<span class="download"><a href="{{ infographics_json[infographic].download_link }}" target="_blank">Visualize and Download High-Resolution Infographic</a></span>
-	<p>Like it?</p>
-	<span>Share</span> or <span><a href="{{ url_for('.donate') }}">Donate</a></span>
+	<p class="like-it">Like it?</p>
+	<a href="#" class="button-link"><button class="button share-btn">Share</button></a><a href="{{ url_for('.donate') }}" class="button-link"><button class="button donate-btn">Donate</button></a>
 </div>
 {% endblock content %}
