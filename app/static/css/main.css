@@ -70,14 +70,14 @@ body {
 }
 
 .overlay {
-	width: 2.5em;
-	height: 2.5em;
+	width: 2.4em;
+	height: 1.95em;
 	background-color: #F7931A;
 	color: #fff;
 	font-size: 8em;
 	opacity: 0;
 	padding-left: 0.1em;
-	padding-top: 0.4em;
+	padding-top: 0.55em;
 	-webkit-transition-duration: 0.3s;
 	-moz-transition-duration: 0.3s;
 	-o-transition-duration: 0.3s;
