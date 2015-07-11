@@ -5,18 +5,37 @@ import json
 
 @main.route('/')
 def index():
-    jsonFile = open('app/static/resources/infographics.json')
-    infographicsJson = json.load(jsonFile)
-    return render_template('index.html', infographics_json=infographicsJson)
+    with open('app/static/resources/infographics_index.json') as jsonFile:
+        infographicsJson = json.load(jsonFile)
+        return render_template('index.html',
+                               infographics_json=infographicsJson)
 
 
 @main.route('/infographic/<infographic_slug>')
 def infographic(infographic_slug):
-    jsonFile = open('app/static/resources/infographics.json')
-    infographicsJson = json.load(jsonFile)
-    return render_template('infographic.html',
-                           infographic=infographic_slug,
-                           infographics_json=infographicsJson)
+    with open('app/static/resources/infographics.json') as jsonFile, open('app/static/resources/infographics_index.json') as indexedFile:
+        infographicsJson = json.load(jsonFile)
+        indexedJson = json.load(indexedFile)
+        index = infographicsJson[infographic_slug]['index']
+        next_index = None
+        prev_index = None
+        if index == 0:
+            prev_index = len(infographicsJson)-1
+            next_index = 1
+        elif index == len(infographicsJson)-1:
+            prev_index = len(infographicsJson)-2
+            next_index = 0
+        else:
+            prev_index = index - 1
+            next_index = index + 1
+        prev_slug = indexedJson[str(prev_index)]['slug']
+        next_slug = indexedJson[str(next_index)]['slug']
+        print(infographicsJson[infographic_slug]['index'])
+        return render_template('infographic.html',
+                               infographic=infographic_slug,
+                               infographics_json=infographicsJson,
+                               next_slug=next_slug,
+                               prev_slug=prev_slug)
 
 
 @main.route('/donate/')
