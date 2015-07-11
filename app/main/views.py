@@ -22,8 +22,3 @@ def infographic(infographic_slug):
 @main.route('/donate/')
 def donate():
     return render_template('donate.html')
-
-
-@main.route('/contact/')
-def contact():
-    return render_template('contact.html')
