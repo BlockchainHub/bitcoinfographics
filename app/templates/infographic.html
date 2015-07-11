@@ -3,4 +3,9 @@
 {% block content %}
 <h2 class="medium-infographic-title">{{ infographics_json[infographic].title }}</h2>
 <img src="{{ infographics_json[infographic].image_path }}" alt="" class="infographic-medium">
+<div class="infographic-bottom">
+	<span class="download"><a href="{{ infographics_json[infographic].download_link }}" target="_blank">Visualize and Download High-Resolution Infographic</a></span>
+	<p>Like it?</p>
+	<span>Share</span> or <span><a href="{{ url_for('.donate') }}">Donate</a></span>
+</div>
 {% endblock content %}

@@ -17,3 +17,13 @@ def infographic(infographic_slug):
     return render_template('infographic.html',
                            infographic=infographic_slug,
                            infographics_json=infographicsJson)
+
+
+@main.route('/donate/')
+def donate():
+    return render_template('donate.html')
+
+
+@main.route('/contact/')
+def contact():
+    return render_template('contact.html')
