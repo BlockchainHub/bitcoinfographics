@@ -21,6 +21,9 @@
 	<div class="content">
 	{% block content %}
 	{% endblock content %}
+		<p class="like-it">Like it?</p>
+	<div class="bubble"></div>
+	<a href="{{ url_for('.donate') }}" class="button-link"><button class="button donate-btn">Donate</button></a>
 
 		<div class="contact">
 			<p>Contact us on <a href="mailto:contact@bitcoinfographics.com">contact@bitcoinfographics.com</a></p>
@@ -33,6 +36,8 @@
 			<span>We will never enforce this license in any way;<br>This just means it would be kind to follow <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> when sharing these infographics. :)</span>
 		</div>
 	</div>
+
+	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-55a18dd87d415388" async="async"></script>
 
 </body>
 </html>
