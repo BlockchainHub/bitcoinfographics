@@ -1,0 +1,110 @@
+body {
+	font-family: 'Ubuntu', sans-serif;
+}
+
+#top-div {
+	margin: 10px 0 0 10px;
+}
+
+#btc-logo {
+	max-width: 5em;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#top-home-link {
+	text-decoration: none;
+}
+
+#title {
+	font-size: 2.5em;
+
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#title .bitco {
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: 700;
+	font-style: italic;
+	color: #4D4D4D;
+}
+
+#title .infographics {
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: 400;
+	font-style: italic;
+	color: #F7931A;
+}
+
+.infographic-container {
+	width: 20em;
+	height: 20em;
+}
+
+#infographics-list {
+	display: inline-block;
+	list-style: none;
+	vertical-align: top;
+}
+
+.content {
+	text-align: center;
+}
+
+.infographic-item {
+	margin-top: 4em;
+}
+
+.infographic-item a {
+	color: #4d4d4d;
+	text-decoration: none;
+	-webkit-transition-duration: 0.3s;
+	-moz-transition-duration: 0.3s;
+	-o-transition-duration: 0.3s;
+	-ms-transition-duration: 0.3s;
+	-webkit-transition-property:color;
+	-moz-transition-property:color;
+	-o-transition-property:color;
+	-ms-transition-property:color;
+}
+
+.overlay {
+	width: 2.5em;
+	height: 2.5em;
+	background-color: #F7931A;
+	color: #fff;
+	font-size: 8em;
+	opacity: 0;
+	padding-left: 0.1em;
+	padding-top: 0.4em;
+	-webkit-transition-duration: 0.3s;
+	-moz-transition-duration: 0.3s;
+	-o-transition-duration: 0.3s;
+	-ms-transition-duration: 0.3s;
+	-webkit-transition-property:opacity;
+	-moz-transition-property:opacity;
+	-o-transition-property:opacity;
+	-ms-transition-property:opacity;
+}
+
+.infographic-item a:hover {
+	color: #F7931A;
+}
+
+.infographic-item a:hover .overlay {
+	opacity: 0.7;
+}
+
+.infographic-title {
+	width: 17em;
+	height: 2.5em;
+}
+
+.infographic-medium {
+	margin-top: 3em;
+}
+
+.medium-infographic-title {
+	color: #4d4d4d;
+}

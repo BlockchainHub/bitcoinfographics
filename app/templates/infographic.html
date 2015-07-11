@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2 class="medium-infographic-title">{{ infographics_json[infographic].title }}</h2>
+<img src="{{ infographics_json[infographic].image_path }}" alt="" class="infographic-medium">
+{% endblock content %}
