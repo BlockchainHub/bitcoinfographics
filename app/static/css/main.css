@@ -115,7 +115,7 @@ a:hover, a:focus {
 
 .infographic-medium {
 	margin-top: 3em;
-	max-width: 100%;
+	max-width: 85%;
 	max-height: 60em;
 }
 
@@ -142,6 +142,7 @@ a:hover, a:focus {
 .like-it {
 	margin-top: 40px;
 	font-size: 1.2em;
+	font-weight: 700;
 }
 
 .button {
@@ -152,10 +153,6 @@ a:hover, a:focus {
 	width: 6em;
 	transition-property: background-color, border;
 	transition-duration: 0.3s;
-}
-
-.donate-btn {
-	margin-left: 2em;
 }
 
 .button-link {
@@ -171,6 +168,10 @@ a:hover, a:focus {
 .button-link:hover .button{
 	background-color: #F7931A;
 	border: 1px solid #F7931A;
+}
+
+.donate-btn {
+	margin-bottom: 30px;
 }
 
 .donate-area {
