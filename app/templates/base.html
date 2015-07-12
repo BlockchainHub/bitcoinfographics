@@ -31,7 +31,7 @@
 	<div class="content">
 	{% block content %}
 	{% endblock content %}
-	{% if request.endpoint != None %}
+	{% if error != True %}
 	{% if request.endpoint != 'main.donate' %}
 		<p class="like-it">Like it?</p>
 		<div class="bubble"></div>
