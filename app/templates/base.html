@@ -22,7 +22,7 @@
 <body>
 
 	<div id="top-div">
-		<a href="{{ url_for('.index') }}" id="top-home-link">
+		<a href="{{ url_for('main.index') }}" id="top-home-link">
 			<img src="{{ url_for('static', filename='img/btc_logo.png') }}" id="btc-logo" alt="">
 			<h1 id="title"><span class="bitco">bitco</span><span class="infographics">infographics</span></h1>
 		</a>
@@ -31,10 +31,11 @@
 	<div class="content">
 	{% block content %}
 	{% endblock content %}
+	{% if request.endpoint != None %}
 	{% if request.endpoint != 'main.donate' %}
 		<p class="like-it">Like it?</p>
 		<div class="bubble"></div>
-		<a href="{{ url_for('.donate') }}" class="button-link"><button class="button donate-btn">Donate</button></a>
+		<a href="{{ url_for('main.donate') }}" class="button-link"><button class="button donate-btn">Donate</button></a>
 	{% endif %}
 		<div class="contact">
 			<p>Contact us on <a href="mailto:contact@bitcoinfographics.com">contact@bitcoinfographics.com</a></p>
@@ -49,6 +50,7 @@
 	</div>
 
 	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-55a18dd87d415388" async="async"></script>
+	{% endif %}
 
 </body>
 </html>
