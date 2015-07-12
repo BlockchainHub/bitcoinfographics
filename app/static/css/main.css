@@ -29,7 +29,6 @@ a:hover, a:focus {
 
 #title {
 	font-size: 2.5em;
-
 	display: inline-block;
 	vertical-align: middle;
 }
@@ -51,12 +50,14 @@ a:hover, a:focus {
 .infographic-container {
 	width: 20em;
 	height: 20em;
+	margin: 0 2em;
 }
 
 #infographics-list {
 	display: inline-block;
 	list-style: none;
 	vertical-align: top;
+	padding: 0;
 }
 
 .content {
@@ -109,7 +110,7 @@ a:hover, a:focus {
 }
 
 .infographic-title {
-	width: 17em;
+	width: 20.5em;
 	height: 2.5em;
 }
 
@@ -201,4 +202,25 @@ a:hover, a:focus {
 
 .tip-title {
 	font-size: 1.2em;
+}
+
+@media (max-width: 360px) {
+	.infographic-container {
+		margin: 0;
+	}
+	.infographic-title {
+		width: 17em;
+	}
+}
+
+@media (max-width: 500px) {
+	#btc-logo {
+		max-width: 4em;
+	}
+	#title {
+		font-size: 2em;
+	}
+	.content {
+		margin: 0 1em 0 1em;
+	}
 }

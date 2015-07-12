@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>bitcoinfographics</title>
 	<!-- style -->
 	<link rel="stylesheet" href="{{ url_for('static', filename='components/normalize/normalize.css') }}">
@@ -21,10 +22,11 @@
 	<div class="content">
 	{% block content %}
 	{% endblock content %}
+	{% if request.endpoint != 'main.donate' %}
 		<p class="like-it">Like it?</p>
-	<div class="bubble"></div>
-	<a href="{{ url_for('.donate') }}" class="button-link"><button class="button donate-btn">Donate</button></a>
-
+		<div class="bubble"></div>
+		<a href="{{ url_for('.donate') }}" class="button-link"><button class="button donate-btn">Donate</button></a>
+	{% endif %}
 		<div class="contact">
 			<p>Contact us on <a href="mailto:contact@bitcoinfographics.com">contact@bitcoinfographics.com</a></p>
 		</div>
