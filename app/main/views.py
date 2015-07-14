@@ -34,7 +34,6 @@ def infographic(infographic_slug):
             next_index = index + 1
         prev_slug = indexedJson[str(prev_index)]['slug']
         next_slug = indexedJson[str(next_index)]['slug']
-        print(infographicsJson[infographic_slug]['index'])
         return render_template('infographic.html',
                                infographic=infographic_slug,
                                infographics_json=infographicsJson,
