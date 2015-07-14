@@ -1,4 +1,14 @@
 {
+	"what-does-it-really-mean-to-have-bitcoins":
+		{
+			"title": "What Does it Really Mean to Have bitcoins",
+			"image_path": "/static/img/infographics/medium/what-does-it-really-mean-to-have-bitcoins.png",
+			"thumbnail_path": "/static/img/infographics/thumbnails/what-does-it-really-mean-to-have-bitcoins.png",
+			"slug": "what-does-it-really-mean-to-have-bitcoins",
+			"download_link": "https://drive.google.com/file/d/0B1LxrOMI7CWSRElwcDRuRlVuQUU/view?usp=sharing",
+			"index": 0
+		},
+
 	"transaction-life-cycle":
 		{
 			"title": "The Bitcoin Transaction Life Cycle",
@@ -6,7 +16,7 @@
 			"thumbnail_path": "/static/img/infographics/thumbnails/transaction-life-cycle.png",
 			"slug": "transaction-life-cycle",
 			"download_link": "https://drive.google.com/file/d/0B1LxrOMI7CWSdzRlWHozeVFLRE0/view?usp=sharing",
-			"index": 0
+			"index": 1
 		},
 
 	"show-me-bitcoin":
@@ -16,7 +26,7 @@
 			"thumbnail_path": "/static/img/infographics/thumbnails/show-me-bitcoin.png",
 			"slug": "show-me-bitcoin",
 			"download_link": "https://drive.google.com/file/d/0B1LxrOMI7CWST2k1TzM4eEN1LXc/view?usp=sharing",
-			"index": 1
+			"index": 2
 		},
 
 	"byzantine-generals-problem":
@@ -26,7 +36,7 @@
 			"thumbnail_path": "/static/img/infographics/thumbnails/byzantine-generals-problem.png",
 			"slug": "byzantine-generals-problem",
 			"download_link": "https://drive.google.com/file/d/0B1LxrOMI7CWSdV9FZmRDRXdvNEE/view?usp=sharing",
-			"index": 2
+			"index": 3
 		},
 
 	"bitcoin-rollercoaster":
@@ -36,7 +46,7 @@
 			"thumbnail_path": "/static/img/infographics/thumbnails/bitcoin-rollercoaster.png",
 			"slug": "bitcoin-rollercoaster",
 			"download_link": "https://drive.google.com/file/d/0B1LxrOMI7CWSakxVMkQzUzJaNjg/view?usp=sharing",
-			"index": 3
+			"index": 4
 		},
 
 	"paper-wallet-cold-storage":
@@ -46,7 +56,7 @@
 			"thumbnail_path": "/static/img/infographics/thumbnails/paper-wallet-cold-storage.png",
 			"slug": "paper-wallet-cold-storage",
 			"download_link": "https://drive.google.com/file/d/0B1LxrOMI7CWSdDRFeUFhWGd4amM/view?usp=sharing",
-			"index": 4
+			"index": 5
 		},
 
 	"what-is-bitcoin-mining":
@@ -56,7 +66,7 @@
 			"thumbnail_path": "/static/img/infographics/thumbnails/what-is-bitcoin-mining.png",
 			"slug": "what-is-bitcoin-mining",
 			"download_link": "https://drive.google.com/file/d/0B1LxrOMI7CWSZWVPZ1FXWVB1SUU/view?usp=sharing",
-			"index": 5
+			"index": 6
 		},
 
 	"what-is-pow":
@@ -66,7 +76,7 @@
 			"thumbnail_path": "/static/img/infographics/thumbnails/what-is-pow.png",
 			"slug": "what-is-pow",
 			"download_link": "https://drive.google.com/file/d/0B1LxrOMI7CWSQzJYTG94ZHZPU28/view?usp=sharing",
-			"index": 6
+			"index": 7
 		},
 
 	"what-is-mining-difficulty":
@@ -76,6 +86,6 @@
 			"thumbnail_path": "/static/img/infographics/thumbnails/what-is-mining-difficulty.png",
 			"slug": "what-is-mining-difficulty",
 			"download_link": "https://drive.google.com/file/d/0B1LxrOMI7CWSd2pYQ3hJOE5oUm8/view?usp=sharing",
-			"index": 7
+			"index": 8
 		}
 }
