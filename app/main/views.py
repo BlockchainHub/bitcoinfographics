@@ -44,3 +44,8 @@ def infographic(infographic_slug):
 @main.route('/donate/')
 def donate():
     return render_template('donate.html')
+
+
+@main.route('/about/')
+def about():
+    return render_template('about.html')
