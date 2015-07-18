@@ -224,3 +224,17 @@ a:hover, a:focus {
 		margin: 0 1em 0 1em;
 	}
 }
+
+#error-404-title {
+	font-size: 2em;
+}
+
+#doge-talk {
+	margin-top: 4em;
+	font-style: italic;
+}
+
+#doge-image {
+	margin-top: 1em;
+	max-width: 90%;
+}

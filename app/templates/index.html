@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% block socialimage %}{{ url_for('static', filename='img/btc_logo.png') }}{% endblock socialimage %}
+
 {% block content %}
 {% with json=infographics_json %}
 {% for infographic in json | sort %}

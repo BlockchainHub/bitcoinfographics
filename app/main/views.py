@@ -1,5 +1,5 @@
 from . import main
-from flask import render_template
+from flask import render_template, abort
 import json
 
 
@@ -16,7 +16,11 @@ def infographic(infographic_slug):
     with open('app/static/resources/infographics.json') as jsonFile, open('app/static/resources/infographics_index.json') as indexedFile:
         infographicsJson = json.load(jsonFile)
         indexedJson = json.load(indexedFile)
-        index = infographicsJson[infographic_slug]['index']
+        index = None
+        if infographicsJson.get(infographic_slug) is not None:
+            index = infographicsJson.get(infographic_slug)['index']
+        else:
+            abort(404)
         next_index = None
         prev_index = None
         if index == 0:
@@ -30,7 +34,6 @@ def infographic(infographic_slug):
             next_index = index + 1
         prev_slug = indexedJson[str(prev_index)]['slug']
         next_slug = indexedJson[str(next_index)]['slug']
-        print(infographicsJson[infographic_slug]['index'])
         return render_template('infographic.html',
                                infographic=infographic_slug,
                                infographics_json=infographicsJson,
