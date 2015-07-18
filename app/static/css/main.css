@@ -47,6 +47,34 @@ a:hover, a:focus {
 	color: #F7931A;
 }
 
+.menu {
+	text-align: right;
+	margin-right: 4em; 
+}
+
+.menu ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+.menu-item {
+	display: inline-block;
+}
+
+.menu-item a {
+	color: #4D4D4D;
+	text-decoration: none;
+	background-color: none;
+	transition-property: color, background-color;
+	transition-duration: 0.3s;
+}
+
+.menu-item a:hover {
+	background-color: #F7931A;
+	color: #fcfcfc;
+	text-decoration: none;
+}
+
 .infographic-container {
 	width: 20em;
 	height: 20em;
@@ -237,4 +265,24 @@ a:hover, a:focus {
 #doge-image {
 	margin-top: 1em;
 	max-width: 90%;
+}
+
+#patricia {
+	margin-bottom: 5em;
+}
+
+.profile {
+	text-align: left;
+	margin-left: 10%;
+	max-width: 80%;
+}
+
+.profile-pic {
+	max-width: 15em;
+	max-height: 15em;
+	border-radius: 100%;
+}
+
+#marco {
+	filter: saturate(0);
 }

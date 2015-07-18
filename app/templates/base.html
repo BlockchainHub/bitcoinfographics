@@ -36,6 +36,13 @@
 			<h1 id="title"><span class="bitco">bitco</span><span class="infographics">infographics</span></h1>
 		</a>
 	</div>
+	<nav class="menu">
+		<ul>
+			<li class="menu-item"><a href="{{ url_for('main.index') }}">Home</a> | </li>
+			<li class="menu-item"><a href="{{ url_for('main.about') }}">About Us</a> | </li>
+			<li class="menu-item"><a href="{{ url_for('main.donate') }}">Donate</a></li>
+		</ul>
+	</nav>
 
 	<div class="content">
 	{% block content %}
