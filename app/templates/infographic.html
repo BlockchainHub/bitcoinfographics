@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block subtitle %} - {{ infographics_json[infographic].title }}{% endblock subtitle %}
-{% block socialimage %}{{ infographics_json[infographic].title }}.thumbnail_path{% endblock socialimage %}
+{% block socialimage %}{{ infographics_json[infographic].thumbnail_path }}{% endblock socialimage %}
 
 {% block content %}
 <h2 class="medium-infographic-title">{{ infographics_json[infographic].title }}</h2>
