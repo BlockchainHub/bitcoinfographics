@@ -87,5 +87,15 @@
 			"slug": "what-is-mining-difficulty",
 			"download_link": "https://drive.google.com/file/d/0B1LxrOMI7CWSd2pYQ3hJOE5oUm8/view?usp=sharing",
 			"index": 8
+		},
+
+	"bitcoin-and-the-crisis":
+		{
+			"title": "Bitcoin and the Crisis",
+			"image_path": "/static/img/infographics/medium/bitcoin-and-the-crisis.png",
+			"thumbnail_path": "/static/img/infographics/thumbnails/bitcoin-and-the-crisis.png",
+			"slug": "bitcoin-and-the-crisis",
+			"download_link": "https://drive.google.com/file/d/0B1LxrOMI7CWSR3lXaE5CdHM0M3c/view?usp=sharing",
+			"index": 9
 		}
 }
