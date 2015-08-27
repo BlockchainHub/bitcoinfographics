@@ -95,5 +95,23 @@
 			"slug": "bitcoin-and-the-crisis",
 			"download_link": "https://drive.google.com/file/d/0B1LxrOMI7CWSR3lXaE5CdHM0M3c/view?usp=sharing",
 			"index": 9
+		},
+
+	"10": {
+			"title": "Is Bitcoin Anonymous?",
+			"image_path": "/static/img/infographics/medium/is-bitcoin-anonymous.png",
+			"thumbnail_path": "/static/img/infographics/thumbnails/is-bitcoin-anonymous.png",
+			"slug": "is-bitcoin-anonymous",
+			"download_link": "https://drive.google.com/file/d/0B1LxrOMI7CWSSkxtWXpfY0NhZUk/view?usp=sharing",
+			"index": 10
+		},
+
+	"11": {
+			"title": "The Blockchain without the Bitcoin",
+			"image_path": "/static/img/infographics/medium/the-blockchain-without-bitcoin.png",
+			"thumbnail_path": "/static/img/infographics/thumbnails/the-blockchain-without-bitcoin.png",
+			"slug": "the-blockchain-without-bitcoin",
+			"download_link": "https://drive.google.com/file/d/0B1LxrOMI7CWSRUtOODZXcW9nT2c/view?usp=sharing",
+			"index": 11
 		}
 }
