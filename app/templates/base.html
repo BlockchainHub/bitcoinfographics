@@ -38,9 +38,9 @@
 	</div>
 	<nav class="menu">
 		<ul>
-			<li class="menu-item"><a href="{{ url_for('main.index') }}">Home</a> | </li>
-			<li class="menu-item"><a href="{{ url_for('main.about') }}">About Us</a> | </li>
-			<li class="menu-item"><a href="{{ url_for('main.donate') }}">Donate</a></li>
+			<li class="menu-item{% if request.path == url_for('main.index') %} active-item{% endif %}"><a href="{{ url_for('main.index') }}">Home</a></li>
+			<li class="menu-item{% if request.path == url_for('main.about') %} active-item{% endif %}"><a href="{{ url_for('main.about') }}">About Us</a></li>
+			<li class="menu-item{% if request.path == url_for('main.donate') %} active-item{% endif %}"><a href="{{ url_for('main.donate') }}">Donate</a></li>
 		</ul>
 	</nav>
 
@@ -67,6 +67,7 @@
 
 	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-55a18dd87d415388" async="async"></script>
 	{% endif %}
-
+	<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 </html>

@@ -60,7 +60,8 @@ a:hover, a:focus {
 
 .menu {
 	text-align: right;
-	margin-right: 4em; 
+	margin-right: 6em;
+	font-size: 1.4em;
 }
 
 .menu ul {
@@ -70,6 +71,12 @@ a:hover, a:focus {
 
 .menu-item {
 	display: inline-block;
+	margin-right: 30px
+}
+
+.active-item {
+	padding-bottom: 7px;
+	border-bottom: 5px solid #F7931A;
 }
 
 .menu-item a {
@@ -83,6 +90,8 @@ a:hover, a:focus {
 
 .menu-item a:hover {
 	background-color: #F7931A;
+	padding-bottom: 12px;
+	padding-top: 12px;
 	color: #fcfcfc;
 	border-bottom: none;
 	text-decoration: none;
