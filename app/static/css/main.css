@@ -76,6 +76,7 @@ a:hover, a:focus {
 	color: #4D4D4D;
 	text-decoration: none;
 	background-color: none;
+	border-bottom: none;
 	transition-property: color, background-color;
 	transition-duration: 0.3s;
 }
@@ -83,6 +84,7 @@ a:hover, a:focus {
 .menu-item a:hover {
 	background-color: #F7931A;
 	color: #fcfcfc;
+	border-bottom: none;
 	text-decoration: none;
 }
 
@@ -323,11 +325,12 @@ a:hover, a:focus {
 
 #marco {
 	filter: saturate(0);
-
-.cc-license {
-	border-bottom: 0px;
 }
 
-.cc-license:hover {
-	border-bottom: 0px;
+.cc-license-link {
+	border-bottom: 0px solid rgba(0, 0, 0, 0);
+}
+
+.cc-license-link:hover {
+	border-bottom: 0px solid rgba(0, 0, 0, 0);
 }
