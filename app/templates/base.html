@@ -15,6 +15,7 @@
 	<meta name="twitter:description" content="Bitcoinfographics is a project to explain Bitcoin technology and ecosystem through simple and beautiful infographics, which are free to be shared and used.">
 	<!-- style -->
 	<link rel="stylesheet" href="{{ url_for('static', filename='components/normalize/normalize.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/foundation.css') }}">
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 	<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,400italic,700italic' rel='stylesheet' type='text/css'>
 	<link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png')}}">
@@ -36,14 +37,17 @@
 			<h1 id="title"><span class="bitco">bitco</span><span class="infographics">infographics</span></h1>
 		</a>
 	</div>
-	<nav class="menu">
-		<ul>
-			<li class="menu-item{% if request.path == url_for('main.index') %} active-item{% endif %}"><a href="{{ url_for('main.index') }}">Home</a></li>
-			<li class="menu-item{% if request.path == url_for('main.about') %} active-item{% endif %}"><a href="{{ url_for('main.about') }}">About Us</a></li>
-			<li class="menu-item{% if request.path == url_for('main.donate') %} active-item{% endif %}"><a href="{{ url_for('main.donate') }}">Donate</a></li>
-		</ul>
-	</nav>
-
+	<div class="row">
+		<div class="small-12 small-centered columns">
+			<nav class="menu">
+				<ul>
+					<li class="menu-item{% if request.path == url_for('main.index') %} active-item{% endif %}"><a href="{{ url_for('main.index') }}">Home</a></li>
+					<li class="menu-item{% if request.path == url_for('main.about') %} active-item{% endif %}"><a href="{{ url_for('main.about') }}">About Us</a></li>
+					<li class="menu-item{% if request.path == url_for('main.donate') %} active-item{% endif %}"><a href="{{ url_for('main.donate') }}">Donate</a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>	
 	<div class="content">
 	{% block content %}
 	{% endblock content %}
@@ -67,7 +71,5 @@
 
 	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-55a18dd87d415388" async="async"></script>
 	{% endif %}
-	<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
-	<script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 </html>
