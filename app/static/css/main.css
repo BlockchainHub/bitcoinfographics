@@ -89,7 +89,7 @@ a:hover, a:focus {
 
 .menu-item a:hover {
 	background-color: #F7931A;
-	padding-bottom: 12px;
+	padding-bottom: 16px;
 	padding-top: 12px;
 	color: #fcfcfc;
 	border-bottom: none;
@@ -132,14 +132,14 @@ a:hover, a:focus {
 }
 
 .overlay {
-	width: 2.4em;
-	height: 1.95em;
+	width: 320px;
+	height: 320px;
 	background-color: #F7931A;
 	color: #fff;
 	font-size: 8em;
 	opacity: 0;
 	padding-left: 0.1em;
-	padding-top: 0.55em;
+	padding-top: 0.45em;
 	-webkit-transition-duration: 0.3s;
 	-moz-transition-duration: 0.3s;
 	-o-transition-duration: 0.3s;
