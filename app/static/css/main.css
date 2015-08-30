@@ -175,9 +175,9 @@ a:hover, a:focus {
 }
 
 .infographic-medium {
-	margin-top: 3em;
+	margin-top: 2em;
 	max-width: 85%;
-	max-height: 60em;
+	/*max-height: 60em;*/
 }
 
 .medium-infographic-title {
