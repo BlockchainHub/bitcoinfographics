@@ -1,7 +1,15 @@
 body {
-	font-family: 'Ubuntu', sans-serif;
+	font-family: 'Source Sans Pro', sans-serif;
 	color: #4d4d4d;
 	background-color: #fcfcfc;
+}
+
+h2 {
+	font-family: 'Ubuntu', sans-serif;
+}
+
+h3 {
+	font-family: 'Ubuntu', sans-serif;
 }
 
 a {
@@ -59,6 +67,7 @@ a:hover, a:focus {
 }
 
 .menu {
+	font-family: 'Ubuntu', sans-serif;
 	text-align: center;
 	font-size: 1.4em;
 }
@@ -159,6 +168,7 @@ a:hover, a:focus {
 }
 
 .infographic-title {
+	font-family: 'Source Sans Pro', sans-serif;
 	width: 20.5em;
 	height: 2.5em;
 }
@@ -235,6 +245,7 @@ a:hover, a:focus {
 
 .like-it {
 	margin-top: 40px;
+	font-family: 'Ubuntu', sans-serif;
 	font-size: 1.2em;
 	font-weight: 700;
 }
