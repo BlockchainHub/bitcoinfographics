@@ -296,10 +296,6 @@ a:hover, a:focus {
 	margin-bottom: 30px;
 }
 
-.donate-area {
-	margin-top: 2em;
-}
-
 .qr-image {
 	border: 5px solid rgba(255, 255, 255, 0);
 	transition: border 0.2s ease-in-out;
