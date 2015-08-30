@@ -3,7 +3,10 @@
 {% block subtitle %} - Donate{% endblock subtitle %}
 
 {% block content %}
-<h2>Donate</h2>
+<ul id="donate-title">
+	<li><h2>Donate</h2></li>
+	<li><img src="{{ url_for('static', filename='img/bitcoin-heart.png') }}" alt="bitcoin and heart" id="bitcoin-heart"></li>
+</ul>	
 <div class="row">
 	<div class="large-8 large-centered small-12 columns">
 		<p>Thank you very much for your appreciation. If you like our work, you can give us some love by donating to the Bitcoin address below &lt;3.</p>
@@ -15,7 +18,7 @@
 		alt="donation address" class="qr-image"/>
 	</a>
 		<figcaption class="qr-caption"><small>1PXzZWSGFgWHP38GrsmmgKiLbm1SMNn9y7</small></figcaption>
-</figure>	
+</figure>
 	<h2 class="tip-title">Or you can send us a tip!</h2>
 	<div class="changetip_tipme_button" data-bid="83e17098-03b3-486e-8635-eb5fb5969116" data-uid="4e881cd9a8c6414192d220885e7ba48f"></div><script>(function(document,script,id){var js,r=document.getElementsByTagName(script)[0],protocol=/^http:/.test(document.location)?'http':'https';if(!document.getElementById(id)){js=document.createElement(script);js.id=id;js.src=protocol+'://widgets.changetip.com/public/js/widgets.js';r.parentNode.insertBefore(js,r)}}(document,'script','changetip_w_0'));</script>
 {% endblock content %}

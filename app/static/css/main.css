@@ -292,6 +292,17 @@ a:hover, a:focus {
 	border: 1px solid #F7931A;
 }
 
+#donate-title li {
+	display: inline-block;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+#bitcoin-heart {
+	height: 40px;
+	width: auto;
+}
+
 .donate-btn {
 	margin-bottom: 30px;
 }
