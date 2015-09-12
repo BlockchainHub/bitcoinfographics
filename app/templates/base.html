@@ -15,7 +15,10 @@
 	<meta name="twitter:description" content="Bitcoinfographics is a project to explain Bitcoin technology and ecosystem through simple and beautiful infographics, which are free to be shared and used.">
 	<!-- style -->
 	<link rel="stylesheet" href="{{ url_for('static', filename='components/normalize/normalize.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/foundation.min.css') }}">
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,400italic,700italic' rel='stylesheet' type='text/css'>
 	<link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png')}}">
 </head>
@@ -36,14 +39,17 @@
 			<h1 id="title"><span class="bitco">bitco</span><span class="infographics">infographics</span></h1>
 		</a>
 	</div>
-	<nav class="menu">
-		<ul>
-			<li class="menu-item"><a href="{{ url_for('main.index') }}">Home</a> | </li>
-			<li class="menu-item"><a href="{{ url_for('main.about') }}">About Us</a> | </li>
-			<li class="menu-item"><a href="{{ url_for('main.donate') }}">Donate</a></li>
-		</ul>
-	</nav>
-
+	<div class="row">
+		<div class="small-12 small-centered columns">
+			<nav class="menu">
+				<ul>
+					<li class="menu-item{% if request.path == url_for('main.index') %} active-item{% endif %}"><a href="{{ url_for('main.index') }}">Home</a></li>
+					<li class="menu-item{% if request.path == url_for('main.about') %} active-item{% endif %}"><a href="{{ url_for('main.about') }}">About Us</a></li>
+					<li class="menu-item{% if request.path == url_for('main.donate') %} active-item{% endif %}"><a href="{{ url_for('main.donate') }}">Donate</a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>	
 	<div class="content">
 	{% block content %}
 	{% endblock content %}
@@ -58,7 +64,7 @@
 		</div>
 
 		<div class="cc-license">
-			<a class="cc-license" rel="license" href="http://creativecommons.org/licenses/by/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
+			<a class="cc-license-link" rel="license" href="http://creativecommons.org/licenses/by/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
 			<br>
 			<br>
 			<span>We will never enforce this license in any way;<br>This just means it would be kind to follow <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> when using these infographics. :)</span>
@@ -67,6 +73,5 @@
 
 	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-55a18dd87d415388" async="async"></script>
 	{% endif %}
-
 </body>
 </html>

@@ -5,17 +5,19 @@
 {% block content %}
 <h2>About Us</h2>
 <br>
-<div class="profile" id="patricia">
-	<img src="{{ url_for ('static', filename='img/patricia.png') }}" class="profile-pic">
-	<h3>Patrícia Estevão</h3>
-	<p>I'm a new designer and a bitcoiner, so I decided to work on my skills by creating this public project to help explaining some aspects of Bitcoin.</p>
-	<p>You can see more of my work or talk directly to me through my website.</p>
-	<p><a href="http://patestevao.com">patestevao.com</a></p>
-</div>
-<div class="profile">
-	<img src="{{ url_for ('static', filename='img/marco.png') }}" class="profile-pic" id="marco">
-	<h3>Marco Agner</h3>
-	<p>I just code stuff.</p>
-	<p><a href="https://agner.io">https://agner.io</a></p>
-</div>
+<div class="row">
+	<div class="large-5 medium-6 small-12 columns">
+		<img src="{{ url_for ('static', filename='img/patricia.png') }}" class="profile-pic">
+		<h3>Patrícia Estevão</h3>
+		<p>I'm a new designer and a bitcoiner, so I decided to work on my skills by creating this public project to help explaining some aspects of Bitcoin.</p>
+		<p>You can see more of my work or talk directly to me through my website.</p>
+		<p><a href="http://patestevao.com">patestevao.com</a></p>
+	</div>
+	<div class="large-5 medium-6 small-12 columns">		
+		<img src="{{ url_for ('static', filename='img/marco.png') }}" class="profile-pic" id="marco">
+		<h3>Marco Agner</h3>
+		<p>I just code stuff.</p>
+		<p><a href="https://agner.io">https://agner.io</a></p>
+	</div>
+</div>		
 {% endblock content %}
