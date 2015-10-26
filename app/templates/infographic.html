@@ -1,10 +1,9 @@
 {% extends 'base.html' %}
 
-{% block subtitle %} - {{ infographics_json[infographic].title }}{% endblock subtitle %}
-{% block socialimage %}{{ infographics_json[infographic].thumbnail_path }}{% endblock socialimage %}
+{% block subtitle %} - {{ infographic.title }}{% endblock subtitle %}
 
 {% block content %}
-<h2 class="medium-infographic-title">{{ infographics_json[infographic].title }}</h2>
+<h2 class="medium-infographic-title">{{ infographic.title }}</h2>
 <div class="row">
 	<div class="small-6 columns">
 		<p><a href="/infographic/{{ prev_slug }}" class="button-link previous-btn"><button class="button previous"><i class="fa fa-angle-left arrow-left"></i>previous</button>
@@ -16,8 +15,8 @@
 	</div>
 </div>
 
-<img src="{{ infographics_json[infographic].image_path }}" alt="" class="infographic-medium">
+<img src="/static/img/infographics/medium/{{ infographic.slug }}_{{ request.args.get('lang') or 'en' }}.png" alt="" class="infographic-medium">
 <div class="infographic-bottom">
-	<span class="download"><a href="{{ infographics_json[infographic].download_link }}" target="_blank">Visualize and Download High-Resolution Infographic</a></span>
+	<span class="download"><a href="{{ infographic.download_url }}" target="_blank">Visualize and Download High-Resolution Infographic</a></span>
 </div>
 {% endblock content %}
