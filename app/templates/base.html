@@ -38,15 +38,6 @@
 			<h1 id="title"><span class="bitco">bitco</span><span class="infographics">infographics</span></h1>
 		</a>
 	</div>
-	{# language switch starts here #}
-	{% if request.endpoint == 'main.index' or request.endpoint == 'main.infographic' %}
-	<div class="lang-switch" style="float: right;">
-		<span><a href="{{ url_for('main.translate') }}?lang=en">en</a></span> |
-		<span><a href="{{ url_for('main.translate') }}?lang=es">es</a></span> |
-		<span><a href="{{ url_for('main.translate') }}?lang=pt">pt</a></span>
-	</div>
-	{% endif %}
-	{# language switch ends here #}
 	<div class="row">
 		<div class="small-12 small-centered columns">
 			<nav class="menu">
@@ -57,7 +48,17 @@
 				</ul>
 			</nav>
 		</div>
-	</div>	
+		{# language switch starts here #}
+		{% if request.endpoint == 'main.index' or request.endpoint == 'main.infographic' %}
+		<div class="lang-switch" style="float: right;">
+		<span>Infographic's Language:</span>
+			<span><a href="{{ url_for('main.translate') }}?lang=en">en</a></span> |
+			<span><a href="{{ url_for('main.translate') }}?lang=es">es</a></span> |
+			<span><a href="{{ url_for('main.translate') }}?lang=pt">pt</a></span>
+		</div>
+		{% endif %}
+	{# language switch ends here #}
+	</div>
 	<div class="content">
 	{% block content %}
 	{% endblock content %}
