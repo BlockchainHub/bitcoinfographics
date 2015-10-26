@@ -48,7 +48,7 @@
 				</ul>
 			</nav>
 		</div>
-		{# language switch starts here #}
+		{#
 		{% if request.endpoint == 'main.index' or request.endpoint == 'main.infographic' %}
 		<div class="lang-switch" style="float: right;">
 		<span>Infographic's Language:</span>
@@ -57,7 +57,7 @@
 			<span><a href="{{ url_for('main.translate') }}?lang=pt">pt</a></span>
 		</div>
 		{% endif %}
-	{# language switch ends here #}
+	#}
 	</div>
 	<div class="content">
 	{% block content %}
