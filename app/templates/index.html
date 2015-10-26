@@ -3,7 +3,7 @@
 {% block socialimage %}{{ url_for('static', filename='img/btc_logo.png') }}{% endblock socialimage %}
 
 {% block content %}
-{% for infographic in infographics %}
+{% for infographic in infographics | reverse %}
 <ul id="infographics-list">
 	<li class="infographic-item">
 		<a href="/infographic/{{ infographic.slug }}">
