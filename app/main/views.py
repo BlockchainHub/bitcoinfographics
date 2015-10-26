@@ -23,8 +23,8 @@ def infographic(infographic_slug):
     lang = check_lang()
     infographics = Infographic.query.all()
     current_infographic = Infographic.query.filter_by(slug=infographic_slug).first_or_404()
-    prev_infographic = Infographic.query.filter_by(id=current_infographic.id-1).first() or infographics[-1]
-    next_infographic = Infographic.query.filter_by(id=current_infographic.id+1).first() or infographics[0]
+    prev_infographic = Infographic.query.filter_by(id=current_infographic.id+1).first() or infographics[0]
+    next_infographic = Infographic.query.filter_by(id=current_infographic.id-1).first() or infographics[-1]
     return render_template('infographic.html',
                                infographic=current_infographic,
                                prev_slug=prev_infographic.slug,
