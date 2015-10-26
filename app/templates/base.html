@@ -32,13 +32,21 @@
   ga('send', 'pageview');
 </script>
 <body>
-
 	<div id="top-div">
 		<a href="{{ url_for('main.index') }}" id="top-home-link">
 			<img src="{{ url_for('static', filename='img/btc_logo.png') }}" id="btc-logo" alt="">
 			<h1 id="title"><span class="bitco">bitco</span><span class="infographics">infographics</span></h1>
 		</a>
 	</div>
+	{# language switch starts here #}
+	{% if request.endpoint == 'main.index' or request.endpoint == 'main.infographic' %}
+	<div class="lang-switch" style="float: right;">
+		<span><a href="{{ url_for('main.translate') }}?lang=en">en</a></span> |
+		<span><a href="{{ url_for('main.translate') }}?lang=es">es</a></span> |
+		<span><a href="{{ url_for('main.translate') }}?lang=pt">pt</a></span>
+	</div>
+	{% endif %}
+	{# language switch ends here #}
 	<div class="row">
 		<div class="small-12 small-centered columns">
 			<nav class="menu">
