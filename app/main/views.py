@@ -1,44 +1,25 @@
 from . import main
-from flask import render_template, abort
-import json
+from flask import render_template, abort, request
+from .. import db
+from ..models import Infographic
 
 
 @main.route('/')
 def index():
-    with open('app/static/resources/infographics_index.json') as jsonFile:
-        infographicsJson = json.load(jsonFile)
-        return render_template('index.html',
-                               infographics_json=infographicsJson)
+    infographics = Infographic.query.order_by('timestamp')
+    return render_template('index.html', infographics=infographics)
 
 
-@main.route('/infographic/<infographic_slug>')
+@main.route('/infographic/<string:infographic_slug>')
 def infographic(infographic_slug):
-    with open('app/static/resources/infographics.json') as jsonFile, open('app/static/resources/infographics_index.json') as indexedFile:
-        infographicsJson = json.load(jsonFile)
-        indexedJson = json.load(indexedFile)
-        index = None
-        if infographicsJson.get(infographic_slug) is not None:
-            index = infographicsJson.get(infographic_slug)['index']
-        else:
-            abort(404)
-        next_index = None
-        prev_index = None
-        if index == 0:
-            prev_index = len(infographicsJson)-1
-            next_index = 1
-        elif index == len(infographicsJson)-1:
-            prev_index = len(infographicsJson)-2
-            next_index = 0
-        else:
-            prev_index = index - 1
-            next_index = index + 1
-        prev_slug = indexedJson[str(prev_index)]['slug']
-        next_slug = indexedJson[str(next_index)]['slug']
-        return render_template('infographic.html',
-                               infographic=infographic_slug,
-                               infographics_json=infographicsJson,
-                               next_slug=next_slug,
-                               prev_slug=prev_slug)
+    infographics = Infographic.query.all()
+    current_infographic = Infographic.query.filter_by(slug=infographic_slug).first_or_404()
+    prev_infographic = Infographic.query.filter_by(id=current_infographic.id-1).first() or infographics[-1]
+    next_infographic = Infographic.query.filter_by(id=current_infographic.id+1).first() or infographics[0]
+    return render_template('infographic.html',
+                               infographic=current_infographic,
+                               prev_slug=prev_infographic.slug,
+                               next_slug=next_infographic.slug)
 
 
 @main.route('/donate/')
