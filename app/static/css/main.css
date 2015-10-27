@@ -83,6 +83,15 @@ a:hover, a:focus {
 	margin-left: 15px;
 }
 
+@media (max-width: 359px) {
+	.menu {
+		font-size: 1.3em;
+	}
+	.menu-item {
+		margin-right: 0px;
+	}
+}
+
 .active-item {
 	padding-bottom: 7px;
 	border-bottom: 5px solid #F7931A;
