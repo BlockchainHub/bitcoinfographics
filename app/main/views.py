@@ -1,5 +1,5 @@
 from . import main
-from flask import render_template
+from flask import render_template, session, redirect, request
 from .. import db
 from ..models import Infographic
 
@@ -7,7 +7,9 @@ from ..models import Infographic
 @main.route('/')
 def index():
     infographics = Infographic.query.order_by('timestamp')
-    return render_template('index.html', infographics=infographics)
+    return render_template('index.html',
+                            infographics=infographics,
+                            lang=session.get('lang') or 'en')
 
 
 @main.route('/infographic/<string:infographic_slug>')
@@ -19,7 +21,8 @@ def infographic(infographic_slug):
     return render_template('infographic.html',
                                infographic=current_infographic,
                                prev_slug=prev_infographic.slug,
-                               next_slug=next_infographic.slug)
+                               next_slug=next_infographic.slug,
+                               lang=session.get('lang') or 'en')
 
 
 @main.route('/donate/')
@@ -30,3 +33,14 @@ def donate():
 @main.route('/about/')
 def about():
     return render_template('about.html')
+
+
+@main.route('/translate/')
+def translate():
+    lang = request.args.get('lang')
+    referrer = request.referrer or '/'
+    if lang and lang in ('en', 'es', 'pt'):
+        session['lang'] = lang
+        return redirect(referrer)
+    session['lang'] = 'en'
+    return redirect(referrer)
