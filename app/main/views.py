@@ -41,6 +41,6 @@ def translate():
     referrer = request.referrer or '/'
     if lang and lang in ('en', 'es', 'pt'):
         session['lang'] = lang
-        return redirect(referrer)
+        return redirect(referrer + '?lang=' + session['lang'])
     session['lang'] = 'en'
-    return redirect(referrer)
+    return redirect(referrer + '?lang=' + session['lang'])
