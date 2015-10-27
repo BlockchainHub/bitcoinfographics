@@ -39,7 +39,8 @@ def about():
 def translate():
     lang = request.args.get('lang')
     referrer = request.referrer or '/'
-    if referrer.find('?'):
+    if '?' in referrer:
+        print(referrer)
         referrer = referrer[:referrer.find('?')]
     if lang and lang in ('en', 'es', 'pt'):
         session['lang'] = lang
