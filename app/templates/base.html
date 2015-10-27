@@ -32,7 +32,6 @@
   ga('send', 'pageview');
 </script>
 <body>
-
 	<div id="top-div">
 		<a href="{{ url_for('main.index') }}" id="top-home-link">
 			<img src="{{ url_for('static', filename='img/btc_logo.png') }}" id="btc-logo" alt="">
@@ -52,7 +51,17 @@
 				</ul>
 			</nav>
 		</div>
-	</div>	
+		{#
+		{% if request.endpoint == 'main.index' or request.endpoint == 'main.infographic' %}
+		<div class="lang-switch" style="float: right;">
+		<span>Infographic's Language:</span>
+			<span><a href="{{ url_for('main.translate') }}?lang=en">en</a></span> |
+			<span><a href="{{ url_for('main.translate') }}?lang=es">es</a></span> |
+			<span><a href="{{ url_for('main.translate') }}?lang=pt">pt</a></span>
+		</div>
+		{% endif %}
+	#}
+	</div>
 	<div class="content">
 	{% block content %}
 	{% endblock content %}

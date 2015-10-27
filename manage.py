@@ -6,12 +6,15 @@ if os.environ.get('FLASK_COVERAGE'):
     COV = coverage.coverage(branch=True, include='app/*')
     COV.start()
 
-from app import create_app
+from app import create_app, db
+from app.models import Infographic
 from flask.ext.script import Manager, Shell
+from flask.ext.migrate import Migrate, MigrateCommand
 # from flask.ext.assets import Environment, Bundle
 
 app = create_app(os.getenv('FLASK_CONFIG') or 'default')
 manager = Manager(app)
+migrate = Migrate(app, db)
 # assets = Environment(app)
 
 # if os.getenv('FLASK_CONFIG') == 'production':
@@ -24,8 +27,9 @@ manager = Manager(app)
 
 
 def make_shell_context():
-    return dict(app=app)
-manager.add_command("Shell", Shell(make_context=make_shell_context))
+    return dict(app=app, db=db, Infographic=Infographic)
+manager.add_command("shell", Shell(make_context=make_shell_context))
+manager.add_command("db", MigrateCommand)
 
 
 @manager.command
