@@ -40,7 +40,9 @@
 	</div>
 	{% if request.endpoint == 'main.index' or request.endpoint == 'main.infographic' %}
 	<div class="row">
-		<span class="i18n-switch"><a href="{{ url_for('main.translate') }}?lang=en">en</a> / <a href="{{ url_for('main.translate') }}?lang=pt">pt</a> / <a href="{{ url_for('main.translate') }}?lang=es">es</a></span>
+		<span class="i18n-switch"><a href="{{ url_for('main.translate') }}?lang=en" {% if lang == 'en' %}class="i18n-selected"{% endif %}>en</a> /
+		 <a href="{{ url_for('main.translate') }}?lang=pt" {% if lang == 'pt' %}class="i18n-selected"{% endif %}>pt</a> /
+		  <a href="{{ url_for('main.translate') }}?lang=es" {% if lang == 'es' %}class="i18n-selected"{% endif %}>es</a></span>
 	</div>	
 	{% endif %}
 	<div class="row">
