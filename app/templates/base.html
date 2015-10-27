@@ -38,9 +38,11 @@
 			<h1 id="title"><span class="bitco">bitco</span><span class="infographics">infographics</span></h1>
 		</a>
 	</div>
+	{% if request.endpoint == 'main.index' or request.endpoint == 'main.infographic' %}
 	<div class="row">
-		<span class="il8n-switch"><a href="{{ url_for('main.translate') }}?lang=en">en</a> / <a href="{{ url_for('main.translate') }}?lang=pt">pt</a> / <a href="{{ url_for('main.translate') }}?lang=es">es</a></span>
-	</div>
+		<span class="i18n-switch"><a href="{{ url_for('main.translate') }}?lang=en">en</a> / <a href="{{ url_for('main.translate') }}?lang=pt">pt</a> / <a href="{{ url_for('main.translate') }}?lang=es">es</a></span>
+	</div>	
+	{% endif %}
 	<div class="row">
 		<div class="small-12 small-centered columns">
 			<nav class="menu">
