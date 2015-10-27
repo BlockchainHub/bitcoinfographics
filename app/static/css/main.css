@@ -195,6 +195,12 @@ a:hover, a:focus {
 	margin-bottom: -1em;
 }
 
+@media (max-width: 760px) {
+	.medium-infographic-title {
+		margin-bottom:0px;
+	}
+}
+
 .previous {
 	color: #4D4D4D;
 	transition: color 0.3s ease-in-out;
@@ -234,7 +240,25 @@ a:hover, a:focus {
 }
 
 .next-btn{
-	margin-left: 20em;
+	margin-left: 70%;
+}
+
+@media (max-width: 767px) {
+	.next-btn {
+		margin-left: 60%;
+	}
+}
+
+@media (max-width: 555px) {
+	.next-btn {
+		margin-left: 50%;
+	}
+}
+
+@media (max-width: 440px) {
+	.next-btn {
+		margin-left: 35%;
+	}
 }
 
 .infographic-bottom {
