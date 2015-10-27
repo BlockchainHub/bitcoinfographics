@@ -52,6 +52,24 @@ a:hover, a:focus {
 	vertical-align: middle;
 }
 
+@media (max-width: 500px) {
+	#btc-logo {
+		max-width: 4em;
+	}
+	#title {
+		font-size: 2em;
+	}
+	.content {
+		margin: 0 1em 0 1em;
+	}
+}
+
+@media (max-width: 326px) {
+	#title {
+		font-size: 1.8em;
+	}
+}
+
 #title .bitco {
 	font-family: 'Ubuntu', sans-serif;
 	font-weight: 700;
@@ -83,6 +101,15 @@ a:hover, a:focus {
 	margin-left: 15px;
 }
 
+@media (max-width: 359px) {
+	.menu {
+		font-size: 1.3em;
+	}
+	.menu-item {
+		margin-right: 0px;
+	}
+}
+
 .active-item {
 	padding-bottom: 7px;
 	border-bottom: 5px solid #F7931A;
@@ -98,10 +125,9 @@ a:hover, a:focus {
 }
 
 .menu-item a:hover {
-	background-color: #F7931A;
 	padding-bottom: 16px;
 	padding-top: 12px;
-	color: #fcfcfc;
+	color: #F7931A;
 	border-bottom: none;
 	text-decoration: none;
 }
@@ -186,6 +212,12 @@ a:hover, a:focus {
 	margin-bottom: -1em;
 }
 
+@media (max-width: 760px) {
+	.medium-infographic-title {
+		margin-bottom:0px;
+	}
+}
+
 .previous {
 	color: #4D4D4D;
 	transition: color 0.3s ease-in-out;
@@ -225,7 +257,25 @@ a:hover, a:focus {
 }
 
 .next-btn{
-	margin-left: 20em;
+	margin-left: 70%;
+}
+
+@media (max-width: 767px) {
+	.next-btn {
+		margin-left: 60%;
+	}
+}
+
+@media (max-width: 555px) {
+	.next-btn {
+		margin-left: 50%;
+	}
+}
+
+@media (max-width: 440px) {
+	.next-btn {
+		margin-left: 35%;
+	}
 }
 
 .infographic-bottom {
@@ -349,18 +399,6 @@ a:hover, a:focus {
 	}
 	.infographic-title {
 		width: 17em;
-	}
-}
-
-@media (max-width: 500px) {
-	#btc-logo {
-		max-width: 4em;
-	}
-	#title {
-		font-size: 2em;
-	}
-	.content {
-		margin: 0 1em 0 1em;
 	}
 }
 
