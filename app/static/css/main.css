@@ -125,10 +125,9 @@ a:hover, a:focus {
 }
 
 .menu-item a:hover {
-	background-color: #F7931A;
 	padding-bottom: 16px;
 	padding-top: 12px;
-	color: #fcfcfc;
+	color: #F7931A;
 	border-bottom: none;
 	text-decoration: none;
 }
