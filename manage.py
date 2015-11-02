@@ -7,7 +7,7 @@ if os.environ.get('FLASK_COVERAGE'):
     COV.start()
 
 from app import create_app, db
-from app.models import Infographic
+from app.models import Infographic, User
 from flask.ext.script import Manager, Shell
 from flask.ext.migrate import Migrate, MigrateCommand
 # from flask.ext.assets import Environment, Bundle
@@ -27,7 +27,7 @@ migrate = Migrate(app, db)
 
 
 def make_shell_context():
-    return dict(app=app, db=db, Infographic=Infographic)
+    return dict(app=app, db=db, Infographic=Infographic, User=User)
 manager.add_command("shell", Shell(make_context=make_shell_context))
 manager.add_command("db", MigrateCommand)
 
