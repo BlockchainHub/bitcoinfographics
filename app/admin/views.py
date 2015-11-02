@@ -61,7 +61,7 @@ class MyAdminIndexView(admin.AdminIndexView):
     @expose('/logout/')
     def logout_view(self):
         login.logout_user()
-        return redirect(url_for('.index'))
+        return redirect(url_for('main.index'))
 
 flask_admin = Admin(name='bitcoinfographics',
                     index_view=MyAdminIndexView(),
