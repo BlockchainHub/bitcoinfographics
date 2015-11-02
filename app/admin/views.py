@@ -1,29 +1,31 @@
-from flask import redirect, url_for
-from .. import flask_admin, db
-import flask_admin as adm
-from flask_admin import AdminIndexView, helpers, expose
-from flask_admin.contrib.sqla import ModelView
-from ..models import Infographic, User
-import flask_login
-from wtforms import fields, validators
+from flask import render_template, redirect, url_for, request
+import flask.ext.login as login
+from flask.ext.login import login_user
 from wtforms.form import Form
-from werkzeug.security import generate_password_hash, check_password_hash
-from flask import Flask
+from wtforms.fields import TextField, PasswordField
+from wtforms.validators import required, ValidationError
+from werkzeug.security import check_password_hash
+from ..models import Infographic
+import flask_admin as admin
+from flask_admin import helpers, expose
+from flask.ext.admin.contrib.sqla import ModelView
+from ..models import db
+from ..models import User
+from flask.ext.admin import Admin
 
 
 class LoginForm(Form):
-
-    login = fields.TextField(validators=[validators.required()])
-    password = fields.PasswordField(validators=[validators.required()])
-
+    login = TextField(validators=[required()])
+    password = PasswordField(validators=[required()])
 
     def validate_login(self, field):
         user = self.get_user()
 
         if user is None:
-            raise validators.ValidationError('Invalid user')
+            raise ValidationError('Invalid user')
+
         if not check_password_hash(user.password, self.password.data):
-            raise validators.ValidationError('Invalid password')
+            raise ValidationError('Invalid password')
 
     def get_user(self):
         return db.session.query(User).filter_by(login=self.login.data).first()
@@ -32,35 +34,38 @@ class LoginForm(Form):
 class MyModelView(ModelView):
 
     def is_accessible(self):
-        return flask_login.current_user.is_authenticated
+        return login.current_user.is_authenticated
 
 
-class MyAdminIndexView(adm.AdminIndexView):
-
+class MyAdminIndexView(admin.AdminIndexView):
 
     @expose('/')
     def index(self):
-        form = LoginForm(request.form)
-        if not flask_login.current_user.is_authenticated:
+        if not login.current_user.is_authenticated:
             return redirect(url_for('.login_view'))
         return super(MyAdminIndexView, self).index()
-
 
     @expose('/login/', methods=['GET', 'POST'])
     def login_view(self):
         form = LoginForm(request.form)
         if helpers.validate_form_on_submit(form):
             user = form.get_user()
-            flask_login.login_user(user)
+            login.login_user(user)
 
         if login.current_user.is_authenticated:
             return redirect(url_for('.index'))
+        self._template_args['form'] = form
         return super(MyAdminIndexView, self).index()
 
 
     @expose('/logout/')
     def logout_view(self):
-        flask_login.logout_user()
+        login.logout_user()
         return redirect(url_for('.index'))
+
+flask_admin = Admin(name='bitcoinfographics',
+                    index_view=MyAdminIndexView(),
+                    base_template='my_master.html',
+                    template_mode='bootstrap3')
 
 flask_admin.add_view(MyModelView(Infographic, db.session))

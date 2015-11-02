@@ -1,5 +1,7 @@
-from . import db
 from datetime import datetime
+from flask.ext.sqlalchemy import SQLAlchemy
+
+db = SQLAlchemy()
 
 
 class Infographic(db.Model):

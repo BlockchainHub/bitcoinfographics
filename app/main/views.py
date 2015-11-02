@@ -1,6 +1,6 @@
 from . import main
 from flask import render_template, session, redirect, request
-from .. import db
+from ..models import db
 from ..models import Infographic
 
 

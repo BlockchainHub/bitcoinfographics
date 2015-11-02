@@ -1,11 +1,9 @@
 from flask import Flask
 from config import config
-from flask.ext.sqlalchemy import SQLAlchemy
-from flask.ext.admin import Admin
 from flask_login import LoginManager
+from models import db, User
+from admin.views import flask_admin
 
-db = SQLAlchemy()
-flask_admin = Admin(name='bitcoinfographics', template_mode='bootstrap3')
 login_manager = LoginManager()
 
 def create_app(config_name):

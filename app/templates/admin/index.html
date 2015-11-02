@@ -1,13 +1,24 @@
-<!-- {% extends 'admin/master.html' %} -->
+{% extends 'admin/master.html' %}
 {% block body %}
 {{ super() }}
 <div class="row-fluid">
 
     <div>
         {% if current_user.is_authenticated %}
-        <p class="lead">
-            Authentication
+        <h1>Admin</h1>
+        <h2 class="lead">
+            Bem-vindx, {{ current_user.login }}!
+        </h2>
+        <p>
+            Lembre-se: Você está mexendo em modelos de banco de dados vivos!!! Depois não vem de chororô que eu não sou obrigado a ter backup.
         </p>
+        <h3>
+            Instruções de uso:
+        </h3>
+        <ol>
+            <li>Tenha, pelo menos, um cérebro humano;</li>
+            <li>Use-o corretamente.</li>
+        </ol>
         {% else %}
         <form method="POST" action="">
             {{ form.hidden_tag() if form.hidden_tag }}
@@ -30,5 +41,6 @@
         {% endif %}
     </div>
 
+    <a class="btn btn-primary" href="/"><i class="icon-arrow-left icon-white"></i> Voltar</a>
 </div>
 {% endblock body %}
