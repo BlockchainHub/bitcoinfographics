@@ -18,17 +18,24 @@ class DevelopmentConfig(Config):
     DEBUG = True
     SQLALCHEMY_DATABASE_URI = os.environ.get('DEV_DATABASE_URL') or \
         'sqlite:///' + os.path.join(basedir, 'data-dev.sqlite')
+    INFOGRAPHICS_DIR = os.environ.get('INFOGRAPHICS_DIR') or \
+        os.path.join(basedir, '/static/img/infographics/')
 
 
 class TestingConfig(Config):
     TESTING = True
     SQLALCHEMY_DATABASE_URI = os.environ.get('TEST_DATABASE_URL') or \
         'sqlite:///' + os.path.join(basedir, 'data-test.sqlite')
+    INFOGRAPHICS_DIR = os.environ.get('INFOGRAPHICS_DIR') or \
+        os.path.join(basedir, '/static/img/infographics/')
 
 
 class ProductionConfig(Config):
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
         'sqlite:///' + os.path.join(basedir, 'data.sqlite')
+    INFOGRAPHICS_DIR = os.environ.get('INFOGRAPHICS_DIR') or \
+        os.path.join(basedir, '/static/img/infographics/')
+
 
     @classmethod
     def init_app(app):
