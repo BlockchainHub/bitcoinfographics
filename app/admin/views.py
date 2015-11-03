@@ -1,7 +1,9 @@
+import os.path as op
 from flask import redirect, url_for, request
 from flask.ext.admin import Admin
 import flask_admin as admin
 from flask.ext.admin.contrib.sqla import ModelView
+from flask.ext.admin.contrib.fileadmin import FileAdmin
 from flask_admin import helpers, expose
 import flask.ext.login as login
 from wtforms.form import Form
@@ -33,6 +35,13 @@ class LoginForm(Form):
 
 
 class MyModelView(ModelView):
+
+
+    def is_accessible(self):
+        return login.current_user.is_authenticated
+
+
+class MyFileAdmin(FileAdmin):
 
 
     def is_accessible(self):
@@ -73,3 +82,8 @@ flask_admin = Admin(name='bitcoinfographics',
                     template_mode='bootstrap3')
 
 flask_admin.add_view(MyModelView(Infographic, db.session))
+
+path = op.join(op.dirname(__file__), '../static/img/infographics')
+flask_admin.add_view(MyFileAdmin(path,
+                                 '/static/img/infographics/',
+                                  name='Infographic Files'))
