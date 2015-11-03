@@ -55,3 +55,9 @@ docs/_build/
 
 # PyBuilder
 target/
+
+# databases
+*.sqlite
+
+# infographic images
+app/static/img/infographics/
