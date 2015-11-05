@@ -61,3 +61,6 @@ target/
 
 # infographic images
 app/static/img/infographics/
+
+# 7z
+*.7z

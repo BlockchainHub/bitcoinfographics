@@ -1,5 +1,8 @@
+import os
 import os.path as op
-from flask import redirect, url_for, request
+import subprocess
+import time
+from flask import redirect, url_for, request, current_app, make_response
 from flask.ext.admin import Admin
 import flask_admin as admin
 from flask.ext.admin.contrib.sqla import ModelView
@@ -56,6 +59,23 @@ class MyAdminIndexView(admin.AdminIndexView):
         if not login.current_user.is_authenticated:
             return redirect(url_for('.login_view'))
         return super(MyAdminIndexView, self).index()
+
+
+    @expose('/backup-db/')
+    def backup_db(self):
+        if not login.current_user.is_authenticated:
+            return redirect(url_for('.login_view'))
+        db_uri = current_app.config['SQLALCHEMY_DATABASE_URI']
+        db_filepath = db_uri[db_uri.find('sqlite:///')+10:]
+        subprocess.call(['7z', 'a', '-p'+os.environ.get('ZIP_PASS'), 'db.7z', db_filepath])
+        try:
+            with open('db.7z', 'rb') as db_file:
+                response = make_response(db_file.read())
+                response.headers["Content-Disposition"] = "attachment; filename=bitcoinfographics_db-" + str(time.time()) + ".7z"
+                return response
+        except Exception:
+            return("Oops! Call an administrator. :P")
+
 
 
     @expose('/login/', methods=['GET', 'POST'])

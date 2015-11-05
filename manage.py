@@ -10,6 +10,7 @@ from app import create_app, db
 from app.models import Infographic, User
 from flask.ext.script import Manager, Shell
 from flask.ext.migrate import Migrate, MigrateCommand
+from werkzeug.security import generate_password_hash
 # from flask.ext.assets import Environment, Bundle
 
 app = create_app(os.getenv('FLASK_CONFIG') or 'default')
@@ -30,6 +31,14 @@ def make_shell_context():
     return dict(app=app, db=db, Infographic=Infographic, User=User)
 manager.add_command("shell", Shell(make_context=make_shell_context))
 manager.add_command("db", MigrateCommand)
+
+
+@manager.command
+def mock_db():
+    """ Create development/test db records."""
+    user = User(login='test', password=generate_password_hash('test'))
+    db.session.add(user)
+    db.session.commit()
 
 
 @manager.command
