@@ -67,8 +67,8 @@ class MyAdminIndexView(admin.AdminIndexView):
             return redirect(url_for('.login_view'))
         db_uri = current_app.config['SQLALCHEMY_DATABASE_URI']
         db_filepath = db_uri[db_uri.find('sqlite:///')+10:]
-        subprocess.call(['7z', 'a', '-p'+os.environ.get('ZIP_PASS'), 'db.7z', db_filepath])
         try:
+            subprocess.call(['7z', 'a', '-p'+ os.environ.get('ZIP_PASS'), 'db.7z', db_filepath])
             with open('db.7z', 'rb') as db_file:
                 response = make_response(db_file.read())
                 response.headers["Content-Disposition"] = "attachment; filename=bitcoinfographics_db-" + str(time.time()) + ".7z"
