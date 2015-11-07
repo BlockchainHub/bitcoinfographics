@@ -3,8 +3,11 @@ from config import config
 from flask_login import LoginManager
 from models import db, User
 from admin.views import flask_admin
+from flask.ext.qrcode import QRcode
 
 login_manager = LoginManager()
+qrcode = QRcode()
+
 
 def create_app(config_name):
     """Creates Flask app."""
@@ -14,6 +17,7 @@ def create_app(config_name):
     db.init_app(app)
     flask_admin.init_app(app)
     login_manager.init_app(app)
+    qrcode.init_app(app)
 
     @login_manager.user_loader
     def load_user(user_id):
