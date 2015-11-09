@@ -359,6 +359,8 @@ a:hover, a:focus {
 
 .qr-image {
 	border: 5px solid rgba(255, 255, 255, 0);
+	height: 12em;
+	width: 12em;
 	transition: border 0.2s ease-in-out;
 	-webkit-transition: border 0.2s ease-in-out;
 	-moz-transition: border 0.2s ease-in-out;
