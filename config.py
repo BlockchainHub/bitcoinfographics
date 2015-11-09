@@ -7,6 +7,7 @@ class Config:
     SQLALCHEMY_COMMIT_ON_TEARDOWN = True
     SQLALCHEMY_TRACK_MODIFICATIONS = True
     SQLALCHEMY_RECORD_QUERIES = True
+    INFOGRAPHICS_DIR = '/static/img/infographics/'
 
 
     @staticmethod
