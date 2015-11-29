@@ -7,6 +7,8 @@ from ..models import Infographic
 @main.route('/')
 @main.route('/<lang>/')
 def index(lang='en'):
+    if lang not in ('en', 'pt', 'es'):
+        lang = 'en'
     infographics = Infographic.query.order_by('timestamp')
     return render_template('index.html',
                             infographics=infographics,
@@ -16,6 +18,8 @@ def index(lang='en'):
 @main.route('/infographic/<string:infographic_slug>')
 @main.route('/<lang>/infographic/<string:infographic_slug>')
 def infographic(infographic_slug, lang='en'):
+    if lang not in ('en', 'pt', 'es'):
+        lang = 'en'
     infographics = Infographic.query.all()
     current_infographic = Infographic.query.filter_by(slug=infographic_slug).first_or_404()
     prev_infographic = Infographic.query.filter_by(id=current_infographic.id+1).first() or infographics[0]
