@@ -15,8 +15,8 @@ def index(lang='en'):
                             lang=lang)
 
 
-@main.route('/infographic/<string:infographic_slug>')
-@main.route('/<lang>/infographic/<string:infographic_slug>')
+@main.route('/<string:infographic_slug>')
+@main.route('/<lang>/<string:infographic_slug>')
 def infographic(infographic_slug, lang='en'):
     if lang not in ('en', 'pt', 'es'):
         lang = 'en'
