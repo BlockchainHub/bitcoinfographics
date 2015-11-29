@@ -1,5 +1,5 @@
 from . import main
-from flask import render_template
+from flask import render_template, url_for, redirect
 from ..models import db
 from ..models import Infographic
 
@@ -15,8 +15,8 @@ def index(lang='en'):
                             lang=lang)
 
 
-@main.route('/<string:infographic_slug>')
-@main.route('/<lang>/<string:infographic_slug>')
+@main.route('/<string:infographic_slug>/')
+@main.route('/<lang>/<string:infographic_slug>/')
 def infographic(infographic_slug, lang='en'):
     if lang not in ('en', 'pt', 'es'):
         lang = 'en'
@@ -29,6 +29,12 @@ def infographic(infographic_slug, lang='en'):
                                prev_slug=prev_infographic.slug,
                                next_slug=next_infographic.slug,
                                lang=lang)
+
+
+@main.route('/infographic/<string:infographic_slug>/')
+@main.route('/<lang>/infographic/<string:infographic_slug>/')
+def old_infographic(infographic_slug, lang='en'):
+    return redirect(url_for('main.infographic', infographic_slug=infographic_slug,lang=lang))
 
 
 @main.route('/donate/')
