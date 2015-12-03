@@ -49,9 +49,9 @@
 		<div class="small-12 small-centered columns">
 			<nav class="menu">
 				<ul>
-					<li class="menu-item{% if request.path == url_for('main.index') %} active-item{% endif %}"><a href="{% if lang %}/{{ lang }}{% endif %}{{ url_for('main.index') }}">Home</a></li>
-					<li class="menu-item{% if request.path == url_for('main.about') %} active-item{% endif %}"><a href="{{ url_for('main.about') }}">About Us</a></li>
-					<li class="menu-item{% if request.path == url_for('main.donate') %} active-item{% endif %}"><a href="{{ url_for('main.donate') }}">Donate</a></li>
+					<li class="menu-item{% if request.path == url_for('main.index', lang=lang) %} active-item{% endif %}"><a href="{% if lang %}/{{ lang }}{% endif %}{{ url_for('main.index') }}">Home</a></li>
+					<li class="menu-item{% if request.path == url_for('main.about', lang=lang) %} active-item{% endif %}"><a href="{{ url_for('main.about') }}">About Us</a></li>
+					<li class="menu-item{% if request.path == url_for('main.donate', lang=lang) %} active-item{% endif %}"><a href="{{ url_for('main.donate') }}">Donate</a></li>
 				</ul>
 			</nav>
 		</div>
