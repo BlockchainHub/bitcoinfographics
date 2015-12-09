@@ -446,6 +446,10 @@ a:hover, a:focus {
 	border-bottom: 1px solid rgba(247, 147, 26, 1);
 }
 
+.order-button {
+	width: 12em;
+}
+
 @media (max-width: 700px) {
 	.i18n-switch {
 		margin-left: 80%;
