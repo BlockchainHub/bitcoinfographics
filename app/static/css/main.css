@@ -294,7 +294,7 @@ a:hover, a:focus {
 	font-size: 0.95em;
 }
 
-.like-it {
+.like-it, .share {
 	margin-top: 40px;
 	font-family: 'Ubuntu', sans-serif;
 	font-size: 1.2em;
@@ -326,11 +326,11 @@ a:hover, a:focus {
 
 .button-link {
 	color: #4d4d4d;
-	transition-property: color 0.3s ease-in-out;
-	-webkit-transition-property: color 0.3s ease-in-out;
-	-moz-transition-property: color 0.3s ease-in-out;
-	-o-transition-property: color 0.3s ease-in-out;
-	-ms-transition-property: color 0.3s ease-in-out;
+	transition: color 0.3s ease-in-out;
+	-webkit-transition: color 0.3s ease-in-out;
+	-moz-transition: color 0.3s ease-in-out;
+	-o-transition: color 0.3s ease-in-out;
+	-ms-transition: color 0.3s ease-in-out;
 }
 
 .button-link:hover{
@@ -446,6 +446,81 @@ a:hover, a:focus {
 	border-bottom: 1px solid rgba(247, 147, 26, 1);
 }
 
+.social-media-buttons{
+	margin-top: 2.2em;
+	margin-bottom: 4em;
+}
+
+.social-media-buttons ul {
+	padding: 0;
+}
+
+.social-media-buttons li {
+	list-style: none;
+	display: inline-block;
+}
+
+.social-media-buttons a {
+	transition: border-bottom 0.3s ease-in-out;
+	-webkit-transition: border-bottom 0.3s ease-in-out;
+	-moz-transition: border-bottom 0.3s ease-in-out;
+	-o-transition: border-bottom 0.3s ease-in-out;
+	-ms-transition: border-bottom 0.3s ease-in-out;
+}
+
+.social-media-buttons svg {
+	padding: 8px;
+	margin-right: 10px;
+	margin-left: 10px;
+	transition: background-color 0.3s ease-in-out;
+	-webkit-transition: background-color 0.3s ease-in-out;
+	-moz-transition: background-color 0.3s ease-in-out;
+	-o-transition: background-color 0.3s ease-in-out;
+	-ms-transition: background-color 0.3s ease-in-out;
+}
+
+.social-media-buttons .twitter svg {
+	background-color: #00aced;
+	fill: #fcfcfc;
+}
+
+.social-media-buttons .facebook svg {
+	background-color: #3b5998;
+	fill: #fcfcfc;
+}
+
+.social-media-buttons .linkedin svg {
+	background-color: #007bb5;
+	fill: #fcfcfc;
+}
+
+.social-media-buttons .googleplus svg {
+	background-color: #dd4b39;
+	fill: #fcfcfc;
+}
+
+.social-media-buttons a:hover, a:focus {
+	border-bottom: none;
+}
+
+.social-media-buttons a:hover svg {
+	background-color: #F7931A;
+}
+
+@media (max-width: 365px) {
+	.social-media-buttons svg {
+		margin-left: 5px;
+		margin-right: 5px;
+	}
+}
+
+@media (max-width: 322px) {
+	.social-media-buttons svg {
+		margin-left: 3px;
+		margin-right: 3px;
+	}
+}
+
 @media (max-width: 700px) {
 	.i18n-switch {
 		margin-left: 80%;
@@ -455,3 +530,5 @@ a:hover, a:focus {
 	.i18n-switch {
 		margin-left: 70%;
 	}
+}
+
