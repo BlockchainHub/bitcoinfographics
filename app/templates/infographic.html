@@ -5,13 +5,14 @@
 {% block content %}
 <h2 class="medium-infographic-title">{{ infographic.title }}</h2>
 <div class="row">
-	<div class="small-6 columns">
-		<p><a href="/{{ lang }}{{ url_for('main.infographic', infographic_slug=prev_slug) }}" class="button-link previous-btn"><button class="button previous"><i class="fa fa-angle-left arrow-left"></i>previous</button>
-		</button></a></p>
-	</div>
-	<div class="small-6 columns">
-		<p><a href="/{{ lang }}{{ url_for('main.infographic', infographic_slug=next_slug) }}" class="button-link next-btn"><button class="button next">next<i class="fa fa-angle-right arrow-right"></i></button>
-		</button></a></p>
+	<div class="large-4 large-offset-8 columns">
+		<ul class="navigation">
+			<li><p><a href="#">first</a></p></li>
+			<li><p><a href="/{{ lang }}{{ url_for('main.infographic', infographic_slug=prev_slug) }}"><b><  previous</b></a></p></li>
+			<li><p>|</p></li>
+			<li><p><a href="/{{ lang }}{{ url_for('main.infographic', infographic_slug=next_slug) }}"><b>next  ></b></a></p></li>
+			<li><p><a href="#">last</a></p></li>
+		</ul>
 	</div>
 </div>
 

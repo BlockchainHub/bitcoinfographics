@@ -218,46 +218,14 @@ a:hover, a:focus {
 	}
 }
 
-.previous {
-	color: #4D4D4D;
-	transition: color 0.3s ease-in-out;
-	-moz-transition: color 0.3s ease-in-out;
-	-webkit-transition: color 0.3s ease-in-out;
-	-o-transition: color 0.3s ease-in-out;
-	-ms-transition: color 0.3s ease-in-out;
-}
-
-.next {
-	color: #4D4D4D;
-	transition: color 0.3s ease-in-out;
-	-moz-transition: color 0.3s ease-in-out;
-	-webkit-transition: color 0.3s ease-in-out;
-	-o-transition: color 0.3s ease-in-out;
-	-ms-transition: color 0.3s ease-in-out;
-}
-
-.arrow-right {
-	padding-left: 5px;
-}
-
-.arrow-left {
-	padding-right: 5px;
-}
-
-.button-link:hover .next {
-	color: #fcfcfc;
-}
-
-.button-link:hover .previous {
-	color: #fcfcfc;
-}
-
-.previous-btn {
-	margin-right: 20em;
-}
-
-.next-btn{
-	margin-left: 70%;
+.navigation li {
+	list-style: none;
+	display: inline-block;
+	padding: 0;
+	margin-left: 15px;
+	margin-bottom: 1.5em;
+	margin-top: 1.5em;
+	color: #F7931A;
 }
 
 @media (max-width: 767px) {
