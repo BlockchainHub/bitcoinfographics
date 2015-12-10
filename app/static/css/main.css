@@ -469,10 +469,13 @@ a:hover, a:focus {
 	-ms-transition: border-bottom 0.3s ease-in-out;
 }
 
-.social-media-buttons svg {
-	padding: 8px;
+.social-media-buttons img {
+	height: 55px;
+	width: auto;
+	padding: 15px;
 	margin-right: 10px;
 	margin-left: 10px;
+	color: #fcfcfc;
 	transition: background-color 0.3s ease-in-out;
 	-webkit-transition: background-color 0.3s ease-in-out;
 	-moz-transition: background-color 0.3s ease-in-out;
@@ -480,45 +483,45 @@ a:hover, a:focus {
 	-ms-transition: background-color 0.3s ease-in-out;
 }
 
-.social-media-buttons .twitter svg {
+.social-media-buttons .twitter img {
 	background-color: #00aced;
-	fill: #fcfcfc;
 }
 
-.social-media-buttons .facebook svg {
+.social-media-buttons .facebook img {
 	background-color: #3b5998;
-	fill: #fcfcfc;
 }
 
-.social-media-buttons .linkedin svg {
+.social-media-buttons .linkedin img {
 	background-color: #007bb5;
-	fill: #fcfcfc;
 }
 
-.social-media-buttons .googleplus svg {
+.social-media-buttons .googleplus img {
 	background-color: #dd4b39;
-	fill: #fcfcfc;
 }
 
 .social-media-buttons a:hover, a:focus {
 	border-bottom: none;
 }
 
-.social-media-buttons a:hover svg {
+.social-media-buttons a:hover img {
 	background-color: #F7931A;
 }
 
 @media (max-width: 365px) {
-	.social-media-buttons svg {
+	.social-media-buttons img {
 		margin-left: 5px;
 		margin-right: 5px;
+		height: 50px;
+		padding: 14px;
 	}
 }
 
 @media (max-width: 322px) {
-	.social-media-buttons svg {
-		margin-left: 3px;
-		margin-right: 3px;
+	.social-media-buttons img {
+		margin-left: 5px;
+		margin-right: 5px;
+		height: 45px;
+		padding: 12px;
 	}
 }
 
