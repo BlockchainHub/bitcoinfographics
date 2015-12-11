@@ -24,10 +24,14 @@ def infographic(infographic_slug, lang='en'):
     current_infographic = Infographic.query.filter_by(slug=infographic_slug).first_or_404()
     prev_infographic = Infographic.query.filter_by(id=current_infographic.id+1).first() or infographics[0]
     next_infographic = Infographic.query.filter_by(id=current_infographic.id-1).first() or infographics[-1]
+    first_infographic = infographics[-1]
+    last_infographic = infographics[0]
     return render_template('infographic.html',
                                infographic=current_infographic,
                                prev_slug=prev_infographic.slug,
                                next_slug=next_infographic.slug,
+                               first_slug=first_infographic.slug,
+                               last_slug=last_infographic.slug,
                                lang=lang)
 
 

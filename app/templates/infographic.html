@@ -7,11 +7,11 @@
 <div class="row">
 	<div class="large-4 large-offset-8 columns">
 		<ul class="navigation">
-			<li><p><a href="#">first</a></p></li>
+			<li><p><a href="/{{ lang }}{{ url_for('main.infographic', infographic_slug=first_slug) }}">first</a></p></li>
 			<li><p><a href="/{{ lang }}{{ url_for('main.infographic', infographic_slug=prev_slug) }}"><b><  previous</b></a></p></li>
 			<li><p>|</p></li>
 			<li><p><a href="/{{ lang }}{{ url_for('main.infographic', infographic_slug=next_slug) }}"><b>next  ></b></a></p></li>
-			<li><p><a href="#">last</a></p></li>
+			<li><p><a href="/{{ lang }}{{ url_for('main.infographic', infographic_slug=last_slug) }}">last</a></p></li>
 		</ul>
 	</div>
 </div>
