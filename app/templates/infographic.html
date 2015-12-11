@@ -5,7 +5,7 @@
 {% block content %}
 <h2 class="medium-infographic-title">{{ infographic.title }}</h2>
 <div class="row">
-	<div class="large-4 large-offset-8 columns">
+	<div class="small-12 small-centered columns">
 		<ul class="navigation">
 			<li><p><a href="/{{ lang }}{{ url_for('main.infographic', infographic_slug=first_slug) }}">first</a></p></li>
 			<li><p><a href="/{{ lang }}{{ url_for('main.infographic', infographic_slug=prev_slug) }}"><b><  previous</b></a></p></li>

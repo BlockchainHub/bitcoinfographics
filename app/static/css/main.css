@@ -201,7 +201,7 @@ a:hover, a:focus {
 }
 
 .infographic-medium {
-	margin-top: 2em;
+	margin-top: 1em;
 	max-width: 85%;
 	/*max-height: 60em;*/
 }
@@ -218,13 +218,17 @@ a:hover, a:focus {
 	}
 }
 
+.navigation {
+	padding: 0;
+}
+
 .navigation li {
 	list-style: none;
 	display: inline-block;
 	padding: 0;
-	margin-left: 15px;
-	margin-bottom: 1.5em;
-	margin-top: 1.5em;
+	margin-left: 6px;
+	margin-right: 6px;
+	margin-top: 2em;
 	color: #F7931A;
 }
 
