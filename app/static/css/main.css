@@ -267,7 +267,6 @@ a:hover, a:focus {
 }
 
 .like-it {
-	margin-top: 40px;
 	font-family: 'Ubuntu', sans-serif;
 	font-size: 1.2em;
 	font-weight: 700;
@@ -314,6 +313,25 @@ a:hover, a:focus {
 	border: 1px solid #F7931A;
 }
 
+.order-copy {
+	font-size: 1.2em;
+	text-align: center;
+}
+
+.order-button {
+	width: 200px;
+	font-size: 1.2em;
+	padding: 15px;
+	display: block;
+	margin: auto; 
+}
+
+.order-link {
+	display: block;
+	width: 200px;
+	margin: auto;
+}
+
 #donate-title li {
 	display: inline-block;
 	margin-right: 10px;
@@ -326,7 +344,7 @@ a:hover, a:focus {
 }
 
 .donate-btn {
-	margin-bottom: 30px;
+	margin-bottom: 20px;
 }
 
 .qr-image {

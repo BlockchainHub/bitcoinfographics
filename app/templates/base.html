@@ -56,13 +56,24 @@
 			</nav>
 		</div>
 	</div>
+	{% if request.endpoint == 'main.index' or request.endpoint == 'main.infographic' %}
+	<div class="row">
+		<div class="large-9 large-centered small-12 small-centered columns">
+			<p class="order-copy">Find out now how you can order a customized infographic for your company or project</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="small-9 small-centered columns">
+			<a href="#" class="button-link order-link"><button class="button order-button">Order Infographic</button></a>	
+		</div>
+	</div>	
+	{% endif %}	
 	<div class="content">
 	{% block content %}
 	{% endblock content %}
 	{% if error != True %}
 	{% if request.endpoint != 'main.donate' %}
 		<p class="like-it">Like it?</p>
-		<div class="bubble"></div>
 		<a href="{{ url_for('main.donate') }}" class="button-link"><button class="button donate-btn">Donate</button></a>
 	{% endif %}
 		<div class="contact">
