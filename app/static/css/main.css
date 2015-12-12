@@ -274,15 +274,15 @@ a:hover, a:focus {
 
 .button {
 	margin-top: 1em;
-	background-color: #fcfcfc;
-	border: 1px solid #4d4d4d;
+	background-color: #F7931A;
+	border: none;
 	padding: 10px;
 	width: 6em;
-	transition-property: background-color, border;
-	-webkit-transition-property: background-color, border;
-	-moz-transition-property: background-color, border;
-	-o-transition-property: background-color, border;
-	-ms-transition-property: background-color, border;
+	transition-property: background-color;
+	-webkit-transition-property: background-color;
+	-moz-transition-property: background-color;
+	-o-transition-property: background-color;
+	-ms-transition-property: background-color;
 	transition-duration: 0.3s;
 	-webkit-transition-duration: 0.3s;
 	-moz-transition-duration: 0.3s;
@@ -296,7 +296,8 @@ a:hover, a:focus {
 }
 
 .button-link {
-	color: #4d4d4d;
+	color: #fcfcfc;
+	border-bottom: 0px;
 	transition-property: color 0.3s ease-in-out;
 	-webkit-transition-property: color 0.3s ease-in-out;
 	-moz-transition-property: color 0.3s ease-in-out;
@@ -304,13 +305,12 @@ a:hover, a:focus {
 	-ms-transition-property: color 0.3s ease-in-out;
 }
 
-.button-link:hover{
-	color: #fcfcfc;
+.button-link:hover .button{
+	background-color: #4d4d4d;
 }
 
-.button-link:hover .button{
-	background-color: #F7931A;
-	border: 1px solid #F7931A;
+.button-link:hover {
+	border-bottom: none;
 }
 
 .order-copy {
