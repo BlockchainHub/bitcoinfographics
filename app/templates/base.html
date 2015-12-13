@@ -78,13 +78,13 @@
 		<p class="share">Share with your friends</p>
 		<div class="social-media-buttons">
 			<ul>
-				<li><a href="#" class="icon twitter" title="Twitter"><img src="{{ url_for('static', filename='img/twitter.svg') }}"></a></li>
+				<li><a href="https://twitter.com/share?text={% if infographic and infographic.title %}{{ infographic.title | urlencode }}:{% else %}Bitcoinfographics:{% endif %}" class="icon twitter" title="Twitter"  target="_blank"><img src="{{ url_for('static', filename='img/twitter.svg') }}"></a></li>
 
-				<li><a href="#" class="icon facebook" title="Facebook"><img src="{{ url_for('static', filename='img/facebook.svg') }}"></a></li>
+				<li><a href="http://www.facebook.com/share.php?u={{ request.url }}" class="icon facebook" title="Facebook" target="_blank"><img src="{{ url_for('static', filename='img/facebook.svg') }}"></a></li>
 
-				<li><a href="#" class="icon linkedin" title="LinkedIn"><img src="{{ url_for('static', filename='img/linkedin2.svg') }}"></a></li>
+				<li><a href="http://www.linkedin.com/shareArticle?mini=true&url={{ request.url }}" class="icon linkedin" title="LinkedIn" target="_blank"><img src="{{ url_for('static', filename='img/linkedin2.svg') }}"></a></li>
 
-				<li><a href="#" class="icon googleplus" title="GooglePlus"><img src="{{ url_for('static', filename='img/google-plus.svg') }}"></a></li>
+				<li><a href="https://plus.google.com/share?url={{ request.url }}" class="icon googleplus" title="GooglePlus" target="_blank"><img src="{{ url_for('static', filename='img/google-plus.svg') }}"></a></li>
 			</ul>
 		</div>
 	{% endif %}
