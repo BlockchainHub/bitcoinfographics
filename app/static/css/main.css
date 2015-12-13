@@ -15,6 +15,7 @@ h3 {
 a {
 	text-decoration: none;
 	color: #F7931A;
+	outline: 0;
 	border-bottom: 1px solid rgba(0, 0, 0, 0); 
 	transition: border-bottom 0.2s ease-in-out;
 	-webkit-transition: border-bottom 0.2s ease-in-out;
@@ -494,7 +495,7 @@ a:hover, a:focus {
 }
 
 .social-media-buttons a:hover img {
-	background-color: #F7931A;
+	background-color: #4d4d4d;
 }
 
 @media (max-width: 365px) {
