@@ -50,3 +50,8 @@ def donate():
 def about():
     return render_template('about.html')
 
+
+@main.route('/order/')
+def order():
+    return render_template('order.html')
+
