@@ -38,6 +38,18 @@ def mock_db():
     """ Create development/test db records."""
     user = User(login='test', password=generate_password_hash('test'))
     db.session.add(user)
+    infographics_list = []
+    try:
+        for fn in os.listdir('./app/static/img/infographics/thumbnails'):
+            if fn.endswith('.png'):
+                infographics_list.append(fn.split('_')[0])
+        for infographic_i in set(infographics_list):
+            infographic_slug = infographic_i
+            infographic_title = infographic_slug.replace('-', ' ')
+            infographic = Infographic(title=infographic_title, slug=infographic_slug)
+            db.session.add(infographic)
+    except:
+        print("No infographics found.")
     db.session.commit()
 
 

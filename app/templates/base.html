@@ -33,39 +33,41 @@
 </script>
 <body>
 	<div id="top-div">
-		<a href="{{ url_for('main.index') }}" id="top-home-link">
+		<a href="{% if lang %}/{{ lang }}{% endif %}{{ url_for('main.index') }}" id="top-home-link">
 			<img src="{{ url_for('static', filename='img/btc_logo.png') }}" id="btc-logo" alt="">
 			<h1 id="title"><span class="bitco">bitco</span><span class="infographics">infographics</span></h1>
 		</a>
 	</div>
 	{% if request.endpoint == 'main.index' or request.endpoint == 'main.infographic' %}
 	<div class="row">
-		<span class="i18n-switch"><a href="{{ url_for('main.translate') }}?lang=en" {% if lang == 'en' %}class="i18n-selected"{% endif %}>en</a> /
-		 <a href="{{ url_for('main.translate') }}?lang=pt" {% if lang == 'pt' %}class="i18n-selected"{% endif %}>pt</a> /
-		  <a href="{{ url_for('main.translate') }}?lang=es" {% if lang == 'es' %}class="i18n-selected"{% endif %}>es</a></span>
+		<span class="i18n-switch"><a href="/en{% if request.path.find(lang) == 1 %}{{ request.path.replace(lang+'/', '', 1) }}{% else %}{{ request.path }}{% endif %}" {% if lang == 'en' %}class="i18n-selected"{% endif %}>en</a> /
+			<a href="/pt{% if request.path.find(lang) == 1 %}{{ request.path.replace(lang+'/', '', 1) }}{% else %}{{ request.path }}{% endif %}" {% if lang == 'pt' %}class="i18n-selected"{% endif %}>pt</a> /
+			<a href="/es{% if request.path.find(lang) == 1 %}{{ request.path.replace(lang+'/', '', 1) }}{% else %}{{request.path}}{% endif %}" {% if lang == 'es' %}class="i18n-selected"{% endif %}>es</a></span>
 	</div>	
 	{% endif %}
 	<div class="row">
 		<div class="small-12 small-centered columns">
 			<nav class="menu">
 				<ul>
-					<li class="menu-item{% if request.path == url_for('main.index') %} active-item{% endif %}"><a href="{{ url_for('main.index') }}">Home</a></li>
-					<li class="menu-item{% if request.path == url_for('main.about') %} active-item{% endif %}"><a href="{{ url_for('main.about') }}">About Us</a></li>
-					<li class="menu-item{% if request.path == url_for('main.donate') %} active-item{% endif %}"><a href="{{ url_for('main.donate') }}">Donate</a></li>
+					<li class="menu-item{% if request.path == url_for('main.index', lang=lang) or request.path == url_for('main.index') %} active-item{% endif %}"><a href="{% if lang %}/{{ lang }}{% endif %}{{ url_for('main.index') }}">Home</a></li>
+					<li class="menu-item{% if request.path == url_for('main.about', lang=lang) or  request.path == url_for('main.about') %} active-item{% endif %}"><a href="{{ url_for('main.about') }}">About Us</a></li>
+					<li class="menu-item{% if request.path == url_for('main.donate', lang=lang) or request.path == url_for('main.donate') %} active-item{% endif %}"><a href="{{ url_for('main.donate') }}">Donate</a></li>
 				</ul>
 			</nav>
 		</div>
-		{#
-		{% if request.endpoint == 'main.index' or request.endpoint == 'main.infographic' %}
-		<div class="lang-switch" style="float: right;">
-		<span>Infographic's Language:</span>
-			<span><a href="{{ url_for('main.translate') }}?lang=en">en</a></span> |
-			<span><a href="{{ url_for('main.translate') }}?lang=es">es</a></span> |
-			<span><a href="{{ url_for('main.translate') }}?lang=pt">pt</a></span>
-		</div>
-		{% endif %}
-	#}
 	</div>
+	{% if request.endpoint == 'main.index' or request.endpoint == 'main.infographic' %}
+	<div class="row">
+		<div class="large-9 large-centered small-12 small-centered columns">
+			<p class="order-copy">Present Your Business or Project in a Beautiful and Unique Way!</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="small-9 small-centered columns">
+			<a href="{{ url_for('main.order') }}" class="button-link order-link"><button class="button order-button">Order Infographic  &#10148;</button></a>	
+		</div>
+	</div>	
+	{% endif %}	
 	<div class="content">
 	{% block content %}
 	{% endblock content %}

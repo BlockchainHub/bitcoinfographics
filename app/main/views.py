@@ -1,28 +1,44 @@
 from . import main
-from flask import render_template, session, redirect, request
+from flask import render_template, url_for, redirect
 from ..models import db
 from ..models import Infographic
 
 
 @main.route('/')
-def index():
+@main.route('/<lang>/')
+def index(lang='en'):
+    if lang not in ('en', 'pt', 'es'):
+        return redirect(url_for('main.index', lang='en'))
     infographics = Infographic.query.order_by('timestamp')
     return render_template('index.html',
                             infographics=infographics,
-                            lang=session.get('lang') or 'en')
+                            lang=lang)
 
 
-@main.route('/infographic/<string:infographic_slug>')
-def infographic(infographic_slug):
+@main.route('/<string:infographic_slug>/')
+@main.route('/<lang>/<string:infographic_slug>/')
+def infographic(infographic_slug, lang='en'):
+    if lang not in ('en', 'pt', 'es'):
+        return redirect(url_for('main.infographic', infographic_slug=infographic_slug, lang='en'))
     infographics = Infographic.query.all()
     current_infographic = Infographic.query.filter_by(slug=infographic_slug).first_or_404()
     prev_infographic = Infographic.query.filter_by(id=current_infographic.id+1).first() or infographics[0]
     next_infographic = Infographic.query.filter_by(id=current_infographic.id-1).first() or infographics[-1]
+    first_infographic = infographics[-1]
+    last_infographic = infographics[0]
     return render_template('infographic.html',
                                infographic=current_infographic,
                                prev_slug=prev_infographic.slug,
                                next_slug=next_infographic.slug,
-                               lang=session.get('lang') or 'en')
+                               first_slug=first_infographic.slug,
+                               last_slug=last_infographic.slug,
+                               lang=lang)
+
+
+@main.route('/infographic/<string:infographic_slug>/')
+@main.route('/<lang>/infographic/<string:infographic_slug>/')
+def old_infographic(infographic_slug, lang='en'):
+    return redirect(url_for('main.infographic', infographic_slug=infographic_slug,lang=lang))
 
 
 @main.route('/donate/')
@@ -35,15 +51,7 @@ def about():
     return render_template('about.html')
 
 
-@main.route('/translate/')
-def translate():
-    lang = request.args.get('lang')
-    referrer = request.referrer or '/'
-    if '?' in referrer:
-        print(referrer)
-        referrer = referrer[:referrer.find('?')]
-    if lang and lang in ('en', 'es', 'pt'):
-        session['lang'] = lang
-        return redirect(referrer + '?lang=' + session['lang'])
-    session['lang'] = 'en'
-    return redirect(referrer + '?lang=' + session['lang'])
+@main.route('/order/')
+def order():
+    return render_template('order.html')
+

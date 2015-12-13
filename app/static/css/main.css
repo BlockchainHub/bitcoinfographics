@@ -201,7 +201,7 @@ a:hover, a:focus {
 }
 
 .infographic-medium {
-	margin-top: 2em;
+	margin-top: 1em;
 	max-width: 85%;
 	/*max-height: 60em;*/
 }
@@ -218,46 +218,18 @@ a:hover, a:focus {
 	}
 }
 
-.previous {
-	color: #4D4D4D;
-	transition: color 0.3s ease-in-out;
-	-moz-transition: color 0.3s ease-in-out;
-	-webkit-transition: color 0.3s ease-in-out;
-	-o-transition: color 0.3s ease-in-out;
-	-ms-transition: color 0.3s ease-in-out;
+.navigation {
+	padding: 0;
 }
 
-.next {
-	color: #4D4D4D;
-	transition: color 0.3s ease-in-out;
-	-moz-transition: color 0.3s ease-in-out;
-	-webkit-transition: color 0.3s ease-in-out;
-	-o-transition: color 0.3s ease-in-out;
-	-ms-transition: color 0.3s ease-in-out;
-}
-
-.arrow-right {
-	padding-left: 5px;
-}
-
-.arrow-left {
-	padding-right: 5px;
-}
-
-.button-link:hover .next {
-	color: #fcfcfc;
-}
-
-.button-link:hover .previous {
-	color: #fcfcfc;
-}
-
-.previous-btn {
-	margin-right: 20em;
-}
-
-.next-btn{
-	margin-left: 70%;
+.navigation li {
+	list-style: none;
+	display: inline-block;
+	padding: 0;
+	margin-left: 6px;
+	margin-right: 6px;
+	margin-top: 2em;
+	color: #F7931A;
 }
 
 @media (max-width: 767px) {
@@ -294,8 +266,7 @@ a:hover, a:focus {
 	font-size: 0.95em;
 }
 
-.like-it, .share {
-	margin-top: 40px;
+.like-it {
 	font-family: 'Ubuntu', sans-serif;
 	font-size: 1.2em;
 	font-weight: 700;
@@ -303,15 +274,15 @@ a:hover, a:focus {
 
 .button {
 	margin-top: 1em;
-	background-color: #fcfcfc;
-	border: 1px solid #4d4d4d;
+	background-color: #F7931A;
+	border: none;
 	padding: 10px;
 	width: 6em;
-	transition-property: background-color, border;
-	-webkit-transition-property: background-color, border;
-	-moz-transition-property: background-color, border;
-	-o-transition-property: background-color, border;
-	-ms-transition-property: background-color, border;
+	transition-property: background-color;
+	-webkit-transition-property: background-color;
+	-moz-transition-property: background-color;
+	-o-transition-property: background-color;
+	-ms-transition-property: background-color;
 	transition-duration: 0.3s;
 	-webkit-transition-duration: 0.3s;
 	-moz-transition-duration: 0.3s;
@@ -325,21 +296,40 @@ a:hover, a:focus {
 }
 
 .button-link {
-	color: #4d4d4d;
-	transition: color 0.3s ease-in-out;
-	-webkit-transition: color 0.3s ease-in-out;
-	-moz-transition: color 0.3s ease-in-out;
-	-o-transition: color 0.3s ease-in-out;
-	-ms-transition: color 0.3s ease-in-out;
-}
-
-.button-link:hover{
 	color: #fcfcfc;
+	border-bottom: 0px;
+	transition-property: color 0.3s ease-in-out;
+	-webkit-transition-property: color 0.3s ease-in-out;
+	-moz-transition-property: color 0.3s ease-in-out;
+	-o-transition-property: color 0.3s ease-in-out;
+	-ms-transition-property: color 0.3s ease-in-out;
 }
 
 .button-link:hover .button{
-	background-color: #F7931A;
-	border: 1px solid #F7931A;
+	background-color: #4d4d4d;
+}
+
+.button-link:hover {
+	border-bottom: none;
+}
+
+.order-copy {
+	font-size: 1.2em;
+	text-align: center;
+}
+
+.order-button {
+	width: 200px;
+	font-size: 1.2em;
+	padding: 15px;
+	display: block;
+	margin: auto; 
+}
+
+.order-link {
+	display: block;
+	width: 200px;
+	margin: auto;
 }
 
 #donate-title li {
@@ -354,7 +344,7 @@ a:hover, a:focus {
 }
 
 .donate-btn {
-	margin-bottom: 30px;
+	margin-bottom: 20px;
 }
 
 .qr-image {
