@@ -78,13 +78,13 @@
 		<p class="share">Share with your friends</p>
 		<div class="social-media-buttons">
 			<ul>
-				<li><a href="#" class="icon twitter" title="Twitter"><img src="../static/img/twitter.svg"></a></li>
+				<li><a href="#" class="icon twitter" title="Twitter"><img src="{{ url_for('static', filename='img/twitter.svg') }}"></a></li>
 
-				<li><a href="#" class="icon facebook" title="Facebook"><img src="../static/img/facebook.svg"></a></li>
+				<li><a href="#" class="icon facebook" title="Facebook"><img src="{{ url_for('static', filename='img/facebook.svg') }}"></a></li>
 
-				<li><a href="#" class="icon linkedin" title="LinkedIn"><img src="../static/img/linkedin2.svg"></a></li>
+				<li><a href="#" class="icon linkedin" title="LinkedIn"><img src="{{ url_for('static', filename='img/linkedin2.svg') }}"></a></li>
 
-				<li><a href="#" class="icon googleplus" title="GooglePlus"><img src="../static/img/google-plus.svg"></a></li>
+				<li><a href="#" class="icon googleplus" title="GooglePlus"><img src="{{ url_for('static', filename='img/google-plus.svg') }}"></a></li>
 			</ul>
 		</div>
 	{% endif %}
