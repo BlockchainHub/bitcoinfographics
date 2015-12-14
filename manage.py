@@ -11,20 +11,21 @@ from app.models import Infographic, User
 from flask.ext.script import Manager, Shell
 from flask.ext.migrate import Migrate, MigrateCommand
 from werkzeug.security import generate_password_hash
-# from flask.ext.assets import Environment, Bundle
+from flask.ext.assets import Environment, Bundle
 
 app = create_app(os.getenv('FLASK_CONFIG') or 'default')
 manager = Manager(app)
 migrate = Migrate(app, db)
-# assets = Environment(app)
+assets = Environment(app)
 
-# if os.getenv('FLASK_CONFIG') == 'production':
-#     css = Bundle('css/normalize.css', 'css/main.css', filters='cssmin',
-#                  output='all.min.css')
-#     assets.register('css_all', css)
-# else:
-#     css = Bundle('css/normalize.css', 'css/main.css')
-#     assets.register('css_all', css)
+if os.getenv('FLASK_CONFIG') == 'production':
+    css = Bundle('components/normalize/normalize.css', 'css/foundation.css', 
+                 'css/main.css', filters='cssmin', output='all.min.css')
+    assets.register('css_all', css)
+else:
+    css = Bundle('components/normalize/normalize.css', 'css/foundation.css',
+                 'css/main.css')
+    assets.register('css_all', css)
 
 
 def make_shell_context():
