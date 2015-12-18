@@ -329,8 +329,13 @@ a:hover, a:focus {
 
 .order-link {
 	display: block;
-	width: 200px;
+	width: 250px;
 	margin: auto;
+}
+
+#arrow-symbol {
+	font-size: 1.2em;
+	vertical-align: middle;
 }
 
 #donate-title li {
