@@ -51,7 +51,12 @@ def about():
     return render_template('about.html')
 
 
+@main.route('/buy/')
+def buy():
+    return render_template('buy.html')
+
+
 @main.route('/order/')
 def order():
-    return render_template('order.html')
+    return redirect(url_for('main.buy'))
 
