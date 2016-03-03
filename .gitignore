@@ -66,3 +66,4 @@ app/static/img/infographics/
 *.7z
 
 *.swp
+.ropeproject
