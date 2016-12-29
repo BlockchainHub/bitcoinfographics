@@ -1,8 +1,8 @@
 from flask import Flask
 from config import config
 from flask_login import LoginManager
-from models import db, User
-from admin.views import flask_admin
+from .models import db, User
+from .admin.views import flask_admin
 from flask.ext.qrcode import QRcode
 
 login_manager = LoginManager()
